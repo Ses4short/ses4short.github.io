@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +13,10 @@
   <style>
     .rb {
       display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 2.5rem;
+      grid-template-columns: 1fr 360px;
+      gap: 2.8rem;
       align-items: start;
-      padding: 2.4rem 0;
+      padding: 2.8rem 0;
       border-bottom: 1px solid #e8eaf0;
     }
 
@@ -26,7 +25,7 @@
     }
 
     .rb.flip {
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 360px 1fr;
     }
 
     .rb.flip .rb-img {
@@ -35,18 +34,18 @@
 
     .rb h2 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       font-weight: 600;
       color: #1a1a2e;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.75rem;
       line-height: 1.25;
     }
 
     .rb p {
-      font-size: 0.97rem;
-      line-height: 1.8;
+      font-size: 0.98rem;
+      line-height: 1.85;
       color: #444;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.85rem;
     }
 
     .rb p:last-child {
@@ -54,14 +53,16 @@
     }
 
     .rb-img {
-      border-radius: 14px;
+      width: 100%;
+      min-height: 330px;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
       overflow: hidden;
       background: #f4f6fb;
-      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      padding: 1.15rem;
     }
 
     .rb-img img {
@@ -69,7 +70,7 @@
       height: 100%;
       object-fit: contain;
       display: block;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     .rb-tag {
@@ -79,19 +80,19 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
       color: #fff;
     }
 
     .pres-block {
-      padding: 2rem 0 0;
+      padding: 2.4rem 0 0;
     }
 
     .pres-block h2 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 1rem;
@@ -104,25 +105,46 @@
     }
 
     .affil-list li {
-      padding: 0.55rem 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid #f0f0f5;
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       color: #444;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .affil-list li:last-child {
       border-bottom: none;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .rb,
       .rb.flip {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
       .rb.flip .rb-img {
         order: 0;
+      }
+
+      .rb-img {
+        max-width: 520px;
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .rb {
+        padding: 2.2rem 0;
+      }
+
+      .rb h2 {
+        font-size: 1.35rem;
+      }
+
+      .rb-img {
+        min-height: 250px;
+        padding: 0.85rem;
       }
     }
   </style>
@@ -373,4 +395,3 @@
 
 </body>
 </html>
-```
