@@ -3,75 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Research — Sherif Eneye Shuaib</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-
   <style>
     .rb {
       display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 2.8rem;
+      grid-template-columns: 1fr 260px;
+      gap: 2.5rem;
       align-items: start;
-      padding: 2.8rem 0;
+      padding: 2.4rem 0;
       border-bottom: 1px solid #e8eaf0;
     }
-
-    .rb:last-of-type {
-      border-bottom: none;
-    }
-
-    .rb.flip {
-      grid-template-columns: 360px 1fr;
-    }
-
-    .rb.flip .rb-img {
-      order: -1;
-    }
+    .rb:last-of-type { border-bottom: none; }
+    .rb.flip { grid-template-columns: 260px 1fr; }
+    .rb.flip .rb-img { order: -1; }
 
     .rb h2 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       font-weight: 600;
       color: #1a1a2e;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
       line-height: 1.25;
     }
-
-    .rb p {
-      font-size: 0.98rem;
-      line-height: 1.85;
-      color: #444;
-      margin-bottom: 0.85rem;
-    }
-
-    .rb p:last-child {
-      margin-bottom: 0;
-    }
+    .rb p { font-size: 0.97rem; line-height: 1.8; color: #444; margin-bottom: 0.8rem; }
+    .rb p:last-child { margin-bottom: 0; }
 
     .rb-img {
-      width: 100%;
-      min-height: 330px;
-      aspect-ratio: 1 / 1;
-      border-radius: 16px;
+      border-radius: 10px;
       overflow: hidden;
       background: #f4f6fb;
+      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.15rem;
     }
-
     .rb-img img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
-      border-radius: 12px;
+      border-radius: 10px;
     }
+    .rb-img svg { width: 100%; height: 100%; display: block; }
 
     .rb-tag {
       display: inline-block;
@@ -80,76 +56,36 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 20px;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
       color: #fff;
     }
 
-    .pres-block {
-      padding: 2.4rem 0 0;
-    }
-
+    .pres-block { padding: 2rem 0 0; }
     .pres-block h2 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 1rem;
     }
-
-    .affil-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
+    .affil-list { list-style: none; padding: 0; margin: 0; }
     .affil-list li {
-      padding: 0.6rem 0;
+      padding: 0.55rem 0;
       border-bottom: 1px solid #f0f0f5;
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       color: #444;
-      line-height: 1.6;
+      line-height: 1.55;
     }
+    .affil-list li:last-child { border-bottom: none; }
 
-    .affil-list li:last-child {
-      border-bottom: none;
-    }
-
-    @media (max-width: 900px) {
-      .rb,
-      .rb.flip {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .rb.flip .rb-img {
-        order: 0;
-      }
-
-      .rb-img {
-        max-width: 520px;
-        min-height: 300px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .rb {
-        padding: 2.2rem 0;
-      }
-
-      .rb h2 {
-        font-size: 1.35rem;
-      }
-
-      .rb-img {
-        min-height: 250px;
-        padding: 0.85rem;
-      }
+    @media (max-width: 700px) {
+      .rb, .rb.flip { grid-template-columns: 1fr; }
+      .rb.flip .rb-img { order: 0; }
     }
   </style>
 </head>
-
 <body>
 
   <div class="wu-stripe"></div>
@@ -160,7 +96,6 @@
         <span class="logo-name">Sherif Eneye Shuaib</span>
         <span class="logo-sub">Applied Mathematics · Data Science</span>
       </a>
-
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -177,9 +112,7 @@
   <section class="page-hero">
     <div class="section-inner">
       <h1>Research</h1>
-      <p class="page-hero-sub">
-        Mathematical modelling, machine learning, and decision-support tools for health, ecological, and environmental systems.
-      </p>
+      <p class="page-hero-sub">Mathematical modelling, machine learning, and decision-support tools for health, ecological, and environmental systems.</p>
     </div>
   </section>
 
@@ -192,24 +125,17 @@
           <span class="rb-tag" style="background:#3b0d6b;">Research Overview</span>
           <h2>Mathematical &amp; Data-Driven Modelling</h2>
           <p>
-            This research develops mathematical and data-driven models to study complex biological,
-            ecological, and public health systems — working at the intersection of applied mathematics,
-            epidemiology, ecology, data science, and machine learning, with a focus on building models
-            that are rigorous, interpretable, and useful for decision-making.
+            This research develops mathematical and data-driven models to study complex biological, ecological, and public health systems — working at the intersection of applied mathematics, epidemiology, ecology, data science, and machine learning, with a focus on building models that are rigorous, interpretable, and useful for decision-making.
           </p>
           <p>
-            A central theme is the integration of mechanistic modelling with modern computational methods:
-            ordinary differential equations, statistical learning, forecasting, uncertainty analysis,
-            explainable AI, and simulation-based approaches for understanding system behaviour and
-            evaluating interventions.
+            A central theme is the integration of mechanistic modelling with modern computational methods: ordinary differential equations, statistical learning, forecasting, uncertainty analysis, explainable AI, and simulation-based approaches for understanding system behaviour and evaluating interventions.
           </p>
         </div>
-
         <div class="rb-img">
           <img
             src="assets/images/overview.png"
             alt="Abstract diagram of interconnected mathematical and data-driven research systems"
-          >
+          />
         </div>
       </div>
 
@@ -219,23 +145,17 @@
           <span class="rb-tag" style="background:#b83030;">Theme 1</span>
           <h2>Mathematical Epidemiology &amp; Disease Modelling</h2>
           <p>
-            This work develops and analyses mathematical models for infectious disease transmission,
-            public health risk, and outbreak response. It includes compartmental epidemic models,
-            risk-stratified population models, vaccination dynamics, limited-data forecasting, and
-            model-based evaluation of disease control strategies.
+            This work develops and analyses mathematical models for infectious disease transmission, public health risk, and outbreak response. It includes compartmental epidemic models, risk-stratified population models, vaccination dynamics, limited-data forecasting, and model-based evaluation of disease control strategies.
           </p>
           <p>
-            Applications span rotavirus, COVID-19, hand-foot-and-mouth disease, mpox, and other emerging
-            infectious disease settings — combining analytical methods, numerical simulation, and
-            data-driven approaches to support public health interpretation and preparedness.
+            Applications span rotavirus, COVID-19, hand-foot-and-mouth disease, mpox, and other emerging infectious disease settings — combining analytical methods, numerical simulation, and data-driven approaches to support public health interpretation and preparedness.
           </p>
         </div>
-
         <div class="rb-img">
           <img
             src="assets/images/epidemiology.png"
             alt="Illustration of infectious disease modelling and epidemic dynamics"
-          >
+          />
         </div>
       </div>
 
@@ -245,23 +165,17 @@
           <span class="rb-tag" style="background:#2e7d32;">Theme 2</span>
           <h2>Ecological &amp; Climate-Health Systems</h2>
           <p>
-            This research studies how environmental change, climate variability, and human activity shape
-            ecological systems and population dynamics. A major focus is on aquatic ecosystems, fisheries,
-            and the interaction between climate stressors and biological processes.
+            This research studies how environmental change, climate variability, and human activity shape ecological systems and population dynamics. A major focus is on aquatic ecosystems, fisheries, and the interaction between climate stressors and biological processes.
           </p>
           <p>
-            The doctoral research develops stage-structured mechanistic models to estimate maturation,
-            mortality, and recruitment parameters for economically important fish species — supporting
-            questions around climate adaptation, fisheries management, and the long-term resilience of
-            ecological and human systems.
+            The doctoral research develops stage-structured mechanistic models to estimate maturation, mortality, and recruitment parameters for economically important fish species — supporting questions around climate adaptation, fisheries management, and the long-term resilience of ecological and human systems.
           </p>
         </div>
-
         <div class="rb-img">
           <img
             src="assets/images/ecology-climate.png"
             alt="Illustration of ecological systems, climate change, and aquatic population dynamics"
-          >
+          />
         </div>
       </div>
 
@@ -271,22 +185,17 @@
           <span class="rb-tag" style="background:#1e4d8c;">Theme 3</span>
           <h2>AI, Data Science &amp; Forecasting</h2>
           <p>
-            Machine learning, statistical modelling, and time-series methods are used to detect patterns,
-            generate forecasts, and extract insight from complex datasets. The work is especially interested
-            in models that are not only predictive, but also interpretable and useful for scientific
-            understanding.
+            Machine learning, statistical modelling, and time-series methods are used to detect patterns, generate forecasts, and extract insight from complex datasets. The work is especially interested in models that are not only predictive, but also interpretable and useful for scientific understanding.
           </p>
           <p>
-            Applications include public health surveillance, environmental risk, agricultural systems,
-            fisheries, and social-media-derived signals related to ecological and health-related change.
+            Applications include public health surveillance, environmental risk, agricultural systems, fisheries, and social-media-derived signals related to ecological and health-related change.
           </p>
         </div>
-
         <div class="rb-img">
           <img
             src="assets/images/ai-forecasting.png"
             alt="Illustration of artificial intelligence, data science, and forecasting"
-          >
+          />
         </div>
       </div>
 
@@ -296,23 +205,17 @@
           <span class="rb-tag" style="background:#5c4b9e;">Theme 4</span>
           <h2>Explainable AI &amp; Hybrid Modelling</h2>
           <p>
-            This research develops explainable and hybrid modelling frameworks — combining mechanistic
-            structure with machine learning to make complex models more transparent, auditable, and
-            scientifically meaningful.
+            This research develops explainable and hybrid modelling frameworks — combining mechanistic structure with machine learning to make complex models more transparent, auditable, and scientifically meaningful.
           </p>
           <p>
-            A key contribution uses Formal Concept Analysis to provide lattice-based explanations for
-            ensemble learning methods such as XGBoost and Gradient Boosting. This framework organises
-            feature relationships and model decision structures in a way that supports interpretation well
-            beyond standard local explanation methods such as LIME and SHAP.
+            A key contribution uses Formal Concept Analysis to provide lattice-based explanations for ensemble learning methods such as XGBoost and Gradient Boosting. This framework organises feature relationships and model decision structures in a way that supports interpretation well beyond standard local explanation methods such as LIME and SHAP.
           </p>
         </div>
-
         <div class="rb-img">
           <img
             src="assets/images/xai-hybrid.png"
             alt="Illustration of explainable AI and hybrid modelling"
-          >
+          />
         </div>
       </div>
 
@@ -322,22 +225,17 @@
           <span class="rb-tag" style="background:#1a6b5a;">Theme 5</span>
           <h2>Decision Modelling &amp; Policy-Relevant Analysis</h2>
           <p>
-            Across all research themes, a shared interest is in how models can support better decisions
-            under uncertainty. This includes evaluating intervention strategies, comparing policy scenarios,
-            quantifying uncertainty, and translating model outputs into practical recommendations.
+            Across all research themes, a shared interest is in how models can support better decisions under uncertainty. This includes evaluating intervention strategies, comparing policy scenarios, quantifying uncertainty, and translating model outputs into practical recommendations.
           </p>
           <p>
-            Applications range from public health intervention timing and resource allocation to ecological
-            management thresholds and environmental planning — connecting rigorous mathematical analysis
-            with real-world decision needs.
+            Applications range from public health intervention timing and resource allocation to ecological management thresholds and environmental planning — connecting rigorous mathematical analysis with real-world decision needs.
           </p>
         </div>
-
         <div class="rb-img">
           <img
             src="assets/images/decision-modelling.png"
             alt="Illustration of decision modelling, policy analysis, and intervention planning"
-          >
+          />
         </div>
       </div>
 
@@ -360,12 +258,10 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-
       <div class="footer-col">
         <strong>Sherif Eneye Shuaib</strong>
         <p>PhD Candidate · Applied Mathematics<br>York University, Toronto, Canada</p>
       </div>
-
       <div class="footer-col">
         <strong>Quick Links</strong>
         <ul>
@@ -377,19 +273,12 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <strong>Contact</strong>
         <p>Department of Mathematics and Statistics, York University<br>Toronto, Ontario, M3J 1L1, Canada</p>
-        <p>
-          <a href="mailto:sherifeneyeshuaib@gmail.com" style="color:rgba(255,255,255,0.65);">
-            sherifeneyeshuaib@gmail.com
-          </a>
-        </p>
+        <p><a href="mailto:sherifeneyeshuaib@gmail.com" style="color:rgba(255,255,255,0.65);">sherifeneyeshuaib@gmail.com</a></p>
       </div>
-
     </div>
-
     <div class="footer-copy">© 2025 Sherif Eneye Shuaib. All Rights Reserved.</div>
   </footer>
 
