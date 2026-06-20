@@ -3,11 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sherif Eneye Shuaib — Applied Mathematician and Data Scientist. PhD candidate at York University and Prince of Songkla University." />
-  <title>Sherif Eneye Shuaib — Applied Mathematics & Data Science</title>
+  <meta name="description" content="MAIDES Lab — Mathematics, AI, Disease, Ecology, and Systems. Led by Sherif Eneye Shuaib. Data-driven mathematical modelling and decision intelligence for health and ecological risk." />
+  <title>Sherif Eneye Shuaib — MAIDES Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── MAIDES wordmark ── */
+    .maides-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 2.2rem 0 1.6rem;
+    }
+
+    /* ── Pipeline diagram section ── */
+    .pipeline-section {
+      background: #f4f6fa;
+      border-top: 1px solid #e4e8f0;
+      border-bottom: 1px solid #e4e8f0;
+    }
+    .pipeline-section .section-inner {
+      max-width: 860px;
+    }
+
+    /* ── Theme cards ── */
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.6rem;
+    }
+    .theme-card {
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+      border-top: 3px solid transparent;
+    }
+    .theme-card h3 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .theme-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #555;
+    }
+    .theme-card.blue  { background: #eef3fb; border-top-color: #1e4d8c; }
+    .theme-card.blue  h3 { color: #1e4d8c; }
+    .theme-card.red   { background: #fceeed; border-top-color: #b83030; }
+    .theme-card.red   h3 { color: #b83030; }
+    .theme-card.green { background: #edf6ee; border-top-color: #2e7d32; }
+    .theme-card.green h3 { color: #2e7d32; }
+    .theme-card.teal  { background: #eaf4f2; border-top-color: #1a6b5a; }
+    .theme-card.teal  h3 { color: #1a6b5a; }
+    .theme-card.purple{ background: #f0eef8; border-top-color: #5c4b9e; }
+    .theme-card.purple h3 { color: #5c4b9e; }
+
+    /* ── About strip ── */
+    .about-strip {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .about-text { flex: 1; min-width: 260px; }
+    .about-stats {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .stat-box {
+      text-align: center;
+      background: #f4f6fa;
+      border-radius: 8px;
+      padding: 1rem 1.4rem;
+      min-width: 120px;
+    }
+    .stat-box .num {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #1e4d8c;
+      display: block;
+      line-height: 1;
+    }
+    .stat-box .lbl {
+      font-size: 0.75rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.25rem;
+      display: block;
+    }
+    .stat-row { display: flex; gap: 1rem; }
+
+    /* ── News ── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+    .news-item {
+      border-left: 3px solid #1e4d8c;
+      padding: 0.8rem 1rem;
+      background: #f9fafb;
+      border-radius: 0 6px 6px 0;
+    }
+    .news-date {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1e4d8c;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .news-item p { font-size: 0.9rem; line-height: 1.6; color: #444; margin: 0; }
+
+    /* ── Publications strip ── */
+    .pub-list { list-style: none; padding: 0; margin: 0; }
+    .pub-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e8eaf0;
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-journal {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2e7d32;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .pub-title {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
+      color: #1a1a2e;
+      margin: 0 0 0.25rem;
+      line-height: 1.45;
+    }
+    .pub-authors { font-size: 0.83rem; color: #777; margin: 0; }
+    .bg-subtle { background: #f4f6fa; }
+
+    @media (max-width: 600px) {
+      .about-strip { flex-direction: column; }
+      .stat-row { flex-direction: column; }
+      .theme-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -32,59 +180,287 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ══════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
         <p class="hero-eyebrow">PhD Candidate · York University & Prince of Songkla University</p>
         <h1>Modelling systems.<br>Explaining decisions.</h1>
         <p class="hero-desc">
-          I am an applied mathematician and data scientist working at the intersection of mathematical modelling and machine learning, addressing problems in epidemiology, ecological systems.
+          Applied mathematician and data scientist working at the intersection of mechanistic modelling and machine learning — developing rigorous, interpretable analytical systems for health and ecological risk.
         </p>
         <div class="hero-links">
-          <a href="about.html" class="btn-primary">About Me</a>
+          <a href="research.html" class="btn-primary">Research</a>
           <a href="publications.html" class="btn-outline">Publications</a>
         </div>
       </div>
       <div class="hero-photo">
-        <div class="photo-frame">
-          <img src="images/profile.jpg" alt="Sherif Eneye Shuaib" onerror="this.style.display='none'; this.parentElement.classList.add('photo-placeholder')" />
-          <div class="photo-initials">SES</div>
+        <!-- MAIDES SVG Wordmark -->
+        <svg viewBox="0 0 420 340" width="100%" role="img"
+             xmlns="http://www.w3.org/2000/svg"
+             style="max-width:420px; display:block; margin:0 auto;">
+          <title>MAIDES Lab — Mathematics, AI, Disease, Ecology, Systems</title>
+          <defs>
+            <!-- Network node pattern for M -->
+            <pattern id="net" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="14" cy="14" r="1.5" fill="rgba(255,255,255,0.35)"/>
+              <line x1="14" y1="14" x2="28" y2="0"  stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
+              <line x1="14" y1="14" x2="0"  y2="28" stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
+            </pattern>
+            <!-- Circuit pattern for AI -->
+            <pattern id="circ" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+              <rect x="10" y="10" width="4" height="4" rx="1" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+              <line x1="0"  y1="12" x2="10" y2="12" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+              <line x1="14" y1="12" x2="24" y2="12" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+              <line x1="12" y1="0"  x2="12" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+            </pattern>
+            <!-- Contour pattern for E/S (ecology) -->
+            <pattern id="contour" x="0" y="0" width="32" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 Q8 2 16 10 Q24 18 32 10" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
+              <path d="M0 16 Q8 8 16 16 Q24 24 32 16" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+            </pattern>
+            <!-- Virus / gear pattern for D -->
+            <pattern id="virus" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+              <circle cx="13" cy="13" r="4" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
+              <line x1="13" y1="2"  x2="13" y2="7"  stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="13" y1="19" x2="13" y2="24" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="2"  y1="13" x2="7"  y2="13" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="19" y1="13" x2="24" y2="13" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
+            </pattern>
+          </defs>
+
+          <!-- ── Letter M ── -->
+          <clipPath id="clip-M">
+            <text x="0" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">M</text>
+          </clipPath>
+          <rect x="0" y="0" width="145" height="200" fill="#1e4d8c" clip-path="url(#clip-M)"/>
+          <rect x="0" y="0" width="145" height="200" fill="url(#net)" clip-path="url(#clip-M)"/>
+
+          <!-- ── Letter A ── -->
+          <clipPath id="clip-A">
+            <text x="125" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">A</text>
+          </clipPath>
+          <rect x="125" y="0" width="112" height="200" fill="#b83030" clip-path="url(#clip-A)"/>
+
+          <!-- ── Letter I ── -->
+          <clipPath id="clip-I">
+            <text x="232" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">I</text>
+          </clipPath>
+          <rect x="232" y="0" width="50" height="200" fill="#1e4d8c" clip-path="url(#clip-I)"/>
+          <rect x="232" y="0" width="50" height="200" fill="url(#circ)" clip-path="url(#clip-I)"/>
+
+          <!-- ── Letter D ── -->
+          <clipPath id="clip-D">
+            <text x="272" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">D</text>
+          </clipPath>
+          <rect x="272" y="0" width="120" height="200" fill="#b83030" clip-path="url(#clip-D)"/>
+          <rect x="272" y="0" width="120" height="200" fill="url(#virus)" clip-path="url(#clip-D)"/>
+
+          <!-- ── Letter E ── -->
+          <clipPath id="clip-E">
+            <text x="368" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">E</text>
+          </clipPath>
+          <rect x="368" y="0" width="100" height="200" fill="#2e7d32" clip-path="url(#clip-E)"/>
+          <rect x="368" y="0" width="100" height="200" fill="url(#contour)" clip-path="url(#clip-E)"/>
+
+          <!-- small circle overlay between AI letters — "brain" node -->
+          <circle cx="278" cy="80" r="38" fill="none" stroke="rgba(30,77,140,0.18)" stroke-width="1.5"/>
+          <circle cx="278" cy="80" r="28" fill="none" stroke="rgba(184,48,48,0.15)" stroke-width="1"/>
+          <circle cx="278" cy="80" r="4" fill="#1e4d8c" opacity="0.6"/>
+          <circle cx="254" cy="60" r="2.5" fill="#b83030" opacity="0.55"/>
+          <circle cx="302" cy="60" r="2.5" fill="#2e7d32" opacity="0.55"/>
+          <circle cx="254" cy="100" r="2.5" fill="#5c4b9e" opacity="0.5"/>
+          <circle cx="302" cy="100" r="2.5" fill="#1a6b5a" opacity="0.5"/>
+          <line x1="278" y1="80" x2="254" y2="60"  stroke="rgba(30,77,140,0.25)" stroke-width="0.9"/>
+          <line x1="278" y1="80" x2="302" y2="60"  stroke="rgba(184,48,48,0.25)" stroke-width="0.9"/>
+          <line x1="278" y1="80" x2="254" y2="100" stroke="rgba(92,75,158,0.25)" stroke-width="0.9"/>
+          <line x1="278" y1="80" x2="302" y2="100" stroke="rgba(26,107,90,0.25)" stroke-width="0.9"/>
+
+          <!-- ES letters -->
+          <clipPath id="clip-S">
+            <text x="446" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">S</text>
+          </clipPath>
+          <rect x="446" y="0" width="90" height="200" fill="#1a6b5a" clip-path="url(#clip-S)"/>
+          <rect x="446" y="0" width="90" height="200" fill="url(#contour)" clip-path="url(#clip-S)"/>
+
+          <!-- ── Subtitle row ── -->
+          <!-- Coloured rule lines -->
+          <rect x="0"   y="215" width="90"  height="2" fill="#1e4d8c" rx="1"/>
+          <rect x="94"  y="215" width="90"  height="2" fill="#b83030" rx="1"/>
+          <rect x="188" y="215" width="90"  height="2" fill="#2e7d32" rx="1"/>
+          <rect x="282" y="215" width="90"  height="2" fill="#1a6b5a" rx="1"/>
+          <rect x="376" y="215" width="58"  height="2" fill="#5c4b9e" rx="1"/>
+
+          <!-- Subtitle text — colour-coded per word -->
+          <text y="244" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
+            <tspan x="0"   fill="#1e4d8c">Mathematics,</tspan>
+            <tspan dx="6"  fill="#555">AI,</tspan>
+            <tspan dx="6"  fill="#b83030">Disease,</tspan>
+            <tspan dx="6"  fill="#2e7d32">Ecology,</tspan>
+            <tspan dx="6"  fill="#1a6b5a">Systems</tspan>
+          </text>
+
+          <!-- Lab name -->
+          <text x="0" y="278" font-family="'Crimson Pro', Georgia, serif" font-size="16" font-weight="400" fill="#888" font-style="italic">
+            MAIDES Lab · Data-Driven Mathematical Modelling &amp; Decision Intelligence
+          </text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ABOUT / IDENTITY
+  ════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">About the Lab</h2>
+      <div class="about-strip">
+        <div class="about-text">
+          <p>
+            The <strong>MAIDES Lab</strong> — <strong>M</strong>athematics, <strong>A</strong>I, <strong>D</strong>isease, <strong>E</strong>cology, and <strong>S</strong>ystems — is dedicated to developing rigorous, interpretable, and practical analytical systems for health and ecological risk. The lab sits at the intersection of applied mathematics, epidemiology, ecology, and data science.
+          </p>
+          <p style="margin-top:0.9rem;">
+            The research question driving all work here is: <em>how can mathematically rigorous and data-informed models improve our understanding of complex biological and health systems, and support better decisions under uncertainty?</em> Mathematical models are not treated as abstract endpoints — they are tools for integrating evidence, testing hypotheses, quantifying uncertainty, evaluating interventions, and generating actionable insight.
+          </p>
+          <p style="margin-top:0.9rem;">
+            The lab operates through a structured five-stage pipeline: data integration, mechanistic and ecological modelling, statistical inference and machine learning, decision analysis and optimisation, and translation into forecasting tools and policy-relevant outputs.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-row">
+            <div class="stat-box">
+              <span class="num">13</span>
+              <span class="lbl">Publications</span>
+            </div>
+            <div class="stat-box">
+              <span class="num">Q1</span>
+              <span class="lbl">Journal target</span>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-box">
+              <span class="num">5</span>
+              <span class="lbl">Research themes</span>
+            </div>
+            <div class="stat-box">
+              <span class="num">4</span>
+              <span class="lbl">Disease areas</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RESEARCH AREAS -->
+  <!-- ══════════════════════════════════
+       PIPELINE
+  ════════════════════════════════════ -->
+  <section class="section pipeline-section">
+    <div class="section-inner">
+      <h2 class="section-title">Five-Stage Research Pipeline</h2>
+      <svg width="100%" viewBox="0 0 820 110" role="img" xmlns="http://www.w3.org/2000/svg"
+           style="display:block; margin-top:1.4rem;">
+        <title>MAIDES five-stage research pipeline</title>
+        <desc>Five sequential stages: Data Integration, Mechanistic Modelling, Inference and Learning, Decision Analysis, Translation and Use.</desc>
+        <defs>
+          <marker id="parr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <style>
+            .ps-t { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; }
+            .ps-s { font-family: 'Inter', sans-serif; font-size: 10px; fill: rgba(255,255,255,0.82); }
+            .ps-n { font-family: 'Inter', sans-serif; font-size: 10px; fill: #aab; }
+          </style>
+        </defs>
+        <!-- Stage boxes -->
+        <rect x="0"   y="18" width="138" height="72" rx="7" fill="#1e4d8c"/>
+        <rect x="164" y="18" width="138" height="72" rx="7" fill="#1a6b5a"/>
+        <rect x="328" y="18" width="138" height="72" rx="7" fill="#5c4b9e"/>
+        <rect x="492" y="18" width="138" height="72" rx="7" fill="#b83030"/>
+        <rect x="656" y="18" width="138" height="72" rx="7" fill="#2e7d32"/>
+
+        <!-- Stage numbers -->
+        <text class="ps-n" x="8" y="31">01</text>
+        <text class="ps-n" x="172" y="31">02</text>
+        <text class="ps-n" x="336" y="31">03</text>
+        <text class="ps-n" x="500" y="31">04</text>
+        <text class="ps-n" x="664" y="31">05</text>
+
+        <!-- Stage titles -->
+        <text class="ps-t" x="69"  y="54" text-anchor="middle" fill="#fff" dominant-baseline="central">Data</text>
+        <text class="ps-t" x="69"  y="69" text-anchor="middle" fill="#fff" dominant-baseline="central">Integration</text>
+
+        <text class="ps-t" x="233" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Mechanistic</text>
+        <text class="ps-t" x="233" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">Modelling</text>
+        <text class="ps-s" x="233" y="77" text-anchor="middle" dominant-baseline="central">ODE · discrete · stochastic</text>
+
+        <text class="ps-t" x="397" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Inference &amp;</text>
+        <text class="ps-t" x="397" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">Learning</text>
+        <text class="ps-s" x="397" y="77" text-anchor="middle" dominant-baseline="central">Bayesian · ML · forecasting</text>
+
+        <text class="ps-t" x="561" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Decision</text>
+        <text class="ps-t" x="561" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">Analysis</text>
+        <text class="ps-s" x="561" y="77" text-anchor="middle" dominant-baseline="central">Optimal control · scenarios</text>
+
+        <text class="ps-t" x="725" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Translation</text>
+        <text class="ps-t" x="725" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">&amp; Use</text>
+        <text class="ps-s" x="725" y="77" text-anchor="middle" dominant-baseline="central">Tools · policy · dashboards</text>
+
+        <!-- Arrows -->
+        <line x1="138" y1="54" x2="162" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="302" y1="54" x2="326" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="466" y1="54" x2="490" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="630" y1="54" x2="654" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       RESEARCH THEMES
+  ════════════════════════════════════ -->
   <section class="section research-areas">
     <div class="section-inner">
-      <h2 class="section-title">Areas of Expertise</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">📐</div>
-          <h3>Mathematical Modelling</h3>
-          <p>Compartmental ODE models for epidemiology and ecology, including stage-structured fish population dynamics and multi-group epidemic models.</p>
+      <h2 class="section-title">Core Research Themes</h2>
+      <div class="theme-grid">
+
+        <div class="theme-card blue">
+          <h3>Climate-Driven Disease Forecasting</h3>
+          <p>Province-level and regional transmission models where key epidemiological quantities depend on climatic and environmental drivers — temperature, rainfall, humidity, mobility. Probabilistic forecasts with uncertainty quantification and early-warning signal generation.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>Machine Learning & Explainable AI</h3>
-          <p>Lattice-theoretic frameworks for XGBoost and Gradient Boosting, FCA-inspired concept lattices, and interpretable predictive models for agriculture and health.</p>
+
+        <div class="theme-card teal">
+          <h3>One Health, Ecology &amp; AMR</h3>
+          <p>Mathematical and ecological models for systems where human, animal, and environmental processes interact — antimicrobial resistance, zoonotic spillover, cross-sector transmission pathways, and ecological interface dynamics.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🐟</div>
-          <h3>Ecological Modelling</h3>
-          <p>Modelling interactions between fishing, climate velocity, and marine fish distribution in Canadian waters; climate adaptation in fishing communities.</p>
+
+        <div class="theme-card red">
+          <h3>Environmental Health &amp; Chronic Disease</h3>
+          <p>Time-series analysis, state-space models, and causal inference for long-term cumulative health burdens shaped by environmental exposures and service-system delays. Quantitative risk modelling for earlier detection and prevention.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🦠</div>
-          <h3>Epidemiological Modelling</h3>
-          <p>COVID-19, mpox, HFMD, and rotavirus transmission models; disease forecasting and intervention analysis across Thailand and Canada.</p>
+
+        <div class="theme-card purple">
+          <h3>Dynamic Intervention Design</h3>
+          <p>Optimal control methods, dynamic optimisation, and scenario simulation to evaluate intervention timing, intensity, and resource allocation. Converting model results into strategic recommendations for health systems.</p>
         </div>
+
+        <div class="theme-card green">
+          <h3>Explainable AI &amp; Hybrid Models</h3>
+          <p>Lattice-theoretic frameworks using Formal Concept Analysis (FCA) to generate structural, hierarchical explanations for ensemble methods. Hybrid models integrating mechanistic structure with machine learning — interpretable and communicable to both scientific and policy audiences.</p>
+        </div>
+
       </div>
+      <p style="margin-top:1.4rem;">
+        <a href="research.html" class="btn-outline">Full Research Overview →</a>
+      </p>
     </div>
   </section>
 
-  <!-- SELECTED PUBLICATIONS -->
+  <!-- ══════════════════════════════════
+       SELECTED PUBLICATIONS
+  ════════════════════════════════════ -->
   <section class="section pubs-preview bg-subtle">
     <div class="section-inner">
       <h2 class="section-title">Selected Publications</h2>
@@ -109,10 +485,12 @@
     </div>
   </section>
 
-  <!-- NEWS -->
+  <!-- ══════════════════════════════════
+       NEWS
+  ════════════════════════════════════ -->
   <section class="section news-section">
     <div class="section-inner">
-      <h2 class="section-title">News & Updates</h2>
+      <h2 class="section-title">News &amp; Updates</h2>
       <div class="news-grid">
         <div class="news-item">
           <span class="news-date">May 2026</span>
@@ -124,11 +502,11 @@
         </div>
         <div class="news-item">
           <span class="news-date">2025</span>
-          <p>New paper in <em>Vaccines</em> (Q1): COVID-19 vaccine timing and co-administration with influenza vaccines in Canada — systematic review with G7 comparisons.</p>
+          <p>New paper in <em>Vaccines</em> (Q1): COVID-19 vaccine timing and co-administration with influenza vaccines — systematic review with international comparisons.</p>
         </div>
         <div class="news-item">
           <span class="news-date">2024</span>
-          <p>Received York University Academic Excellence Fund for Publication and Other Scholarly Activities (2023 & 2024).</p>
+          <p>Received York University Academic Excellence Fund for Publication and Other Scholarly Activities (2023 &amp; 2024).</p>
         </div>
       </div>
     </div>
