@@ -1,87 +1,148 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Research — Sherif Eneye Shuaib</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    /* ── Research block: text + image side by side ── */
+    /* ── PAGE-SPECIFIC RESEARCH STYLING ── */
+
+    .research-intro {
+      max-width: 880px;
+      margin-bottom: 3rem;
+    }
+
+    .research-intro p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .research-themes {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
     .rb {
       display: grid;
-      grid-template-columns: 1fr 260px;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 2.5rem;
-      align-items: start;
-      padding: 2.4rem 0;
-      border-bottom: 1px solid #e8eaf0;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #e7eaf0;
+      box-shadow: 0 12px 34px rgba(30, 20, 60, 0.06);
     }
-    .rb:last-of-type { border-bottom: none; }
-    .rb.flip { grid-template-columns: 260px 1fr; }
-    .rb.flip .rb-img { order: -1; }
 
-    .rb h2 {
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: #1a1a2e;
-      margin-bottom: 0.7rem;
-      line-height: 1.25;
+    .rb.flip {
+      grid-template-columns: 1.15fr 0.85fr;
     }
-    .rb p { font-size: 0.97rem; line-height: 1.8; color: #444; margin-bottom: 0.8rem; }
-    .rb p:last-child { margin-bottom: 0; }
+
+    .rb-text h2 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.8rem;
+      line-height: 1.2;
+      color: #1a1a2e;
+      margin: 0.7rem 0 0.9rem;
+    }
+
+    .rb-text p {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: #4b4b55;
+      margin-bottom: 0.85rem;
+    }
+
+    .rb-tag {
+      display: inline-block;
+      font-family: Inter, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+    }
 
     .rb-img {
-      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      border-radius: 16px;
       overflow: hidden;
       background: #f4f6fb;
-      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .rb-img svg { width: 100%; height: 100%; display: block; }
 
-    /* theme accent tag */
-    .rb-tag {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 0.6rem;
-      color: #fff;
+    .research-theme-img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
     }
 
-    /* presentations */
-    .pres-block { padding: 2rem 0 0; }
-    .pres-block h2 {
+    .presentations-block {
+      margin-top: 3.5rem;
+      padding: 2rem;
+      border-radius: 18px;
+      background: #f4f6fb;
+      border: 1px solid #e4e8f0;
+    }
+
+    .presentations-block h2 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.45rem;
-      font-weight: 600;
+      font-size: 1.8rem;
       color: #1a1a2e;
       margin-bottom: 1rem;
     }
-    .affil-list { list-style: none; padding: 0; margin: 0; }
-    .affil-list li {
-      padding: 0.55rem 0;
-      border-bottom: 1px solid #f0f0f5;
-      font-size: 0.92rem;
-      color: #444;
-      line-height: 1.55;
-    }
-    .affil-list li:last-child { border-bottom: none; }
 
-    @media (max-width: 700px) {
-      .rb, .rb.flip { grid-template-columns: 1fr; }
-      .rb.flip .rb-img { order: 0; }
+    .affil-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .affil-list li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    @media (max-width: 860px) {
+      .rb,
+      .rb.flip {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .rb-img {
+        min-height: 230px;
+      }
+
+      .research-theme-img {
+        min-height: 230px;
+        max-height: 280px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="wu-stripe"></div>
@@ -92,6 +153,7 @@
         <span class="logo-name">Sherif Eneye Shuaib</span>
         <span class="logo-sub">Applied Mathematics · Data Science</span>
       </a>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -105,293 +167,178 @@
     </div>
   </header>
 
+  <!-- ══ PAGE HERO ══ -->
   <section class="page-hero">
     <div class="section-inner">
       <h1>Research</h1>
-      <p class="page-hero-sub">Mathematical modelling, machine learning, and decision-support tools for health, ecological, and environmental systems.</p>
+      <p class="page-hero-sub">
+        Mathematical modelling, machine learning, and decision-support tools for health, ecological, and environmental systems.
+      </p>
     </div>
   </section>
 
+  <!-- ══ RESEARCH CONTENT ══ -->
   <section class="section">
     <div class="section-inner">
 
       <!-- ── OVERVIEW ── -->
-      <div class="rb" style="border-top: 1px solid #e8eaf0;">
-        <div class="rb-text">
-          <span class="rb-tag" style="background:#3b0d6b;">Research Overview</span>
-          <h2>Mathematical &amp; Data-Driven Modelling</h2>
-          <p>
-            This research develops mathematical and data-driven models to study complex biological, ecological, and public health systems working at the intersection of applied mathematics, epidemiology, ecology, data science, and machine learning, with a focus on building models that are rigorous, interpretable, and useful for decision-making.
-          </p>
-          <p>
-            A central theme is the integration of mechanistic modelling with modern computational methods: ordinary differential equations, statistical learning, forecasting, uncertainty analysis, explainable AI, and simulation-based approaches for understanding system behaviour and evaluating interventions.
-          </p>
-        </div>
-        <div class="rb-img">
-          <!-- Overview: abstract connected system SVG -->
-          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <rect width="260" height="260" fill="#f0eef8"/>
-            <!-- grid background -->
-            <line x1="0" y1="65"  x2="260" y2="65"  stroke="#e0daf0" stroke-width="0.8"/>
-            <line x1="0" y1="130" x2="260" y2="130" stroke="#e0daf0" stroke-width="0.8"/>
-            <line x1="0" y1="195" x2="260" y2="195" stroke="#e0daf0" stroke-width="0.8"/>
-            <line x1="65"  y1="0" x2="65"  y2="260" stroke="#e0daf0" stroke-width="0.8"/>
-            <line x1="130" y1="0" x2="130" y2="260" stroke="#e0daf0" stroke-width="0.8"/>
-            <line x1="195" y1="0" x2="195" y2="260" stroke="#e0daf0" stroke-width="0.8"/>
-            <!-- hub nodes -->
-            <circle cx="130" cy="130" r="28" fill="#3b0d6b" opacity="0.9"/>
-            <circle cx="65"  cy="65"  r="18" fill="#1e4d8c" opacity="0.85"/>
-            <circle cx="195" cy="65"  r="18" fill="#b83030" opacity="0.85"/>
-            <circle cx="65"  cy="195" r="18" fill="#2e7d32" opacity="0.85"/>
-            <circle cx="195" cy="195" r="18" fill="#1a6b5a" opacity="0.85"/>
-            <!-- edges -->
-            <line x1="130" y1="130" x2="65"  y2="65"  stroke="#3b0d6b" stroke-width="1.5" opacity="0.4"/>
-            <line x1="130" y1="130" x2="195" y2="65"  stroke="#3b0d6b" stroke-width="1.5" opacity="0.4"/>
-            <line x1="130" y1="130" x2="65"  y2="195" stroke="#3b0d6b" stroke-width="1.5" opacity="0.4"/>
-            <line x1="130" y1="130" x2="195" y2="195" stroke="#3b0d6b" stroke-width="1.5" opacity="0.4"/>
-            <line x1="65"  y1="65"  x2="195" y2="65"  stroke="#666" stroke-width="0.8" opacity="0.3"/>
-            <line x1="65"  y1="195" x2="195" y2="195" stroke="#666" stroke-width="0.8" opacity="0.3"/>
-            <line x1="65"  y1="65"  x2="65"  y2="195" stroke="#666" stroke-width="0.8" opacity="0.3"/>
-            <line x1="195" y1="65"  x2="195" y2="195" stroke="#666" stroke-width="0.8" opacity="0.3"/>
-            <!-- labels -->
-            <text x="130" y="133" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="central">MAIDES</text>
-            <text x="65"  y="68"  font-family="Inter,sans-serif" font-size="9"  fill="#fff" text-anchor="middle" dominant-baseline="central">Math</text>
-            <text x="195" y="68"  font-family="Inter,sans-serif" font-size="9"  fill="#fff" text-anchor="middle" dominant-baseline="central">AI</text>
-            <text x="65"  y="198" font-family="Inter,sans-serif" font-size="8"  fill="#fff" text-anchor="middle" dominant-baseline="central">Ecology</text>
-            <text x="195" y="198" font-family="Inter,sans-serif" font-size="8"  fill="#fff" text-anchor="middle" dominant-baseline="central">Systems</text>
-          </svg>
-        </div>
+      <div class="research-intro">
+        <h2 class="section-title">Research Overview</h2>
+        <p>
+          My research develops mathematical and data-driven models to study complex biological,
+          ecological, and public health systems. I work at the intersection of applied mathematics,
+          epidemiology, ecology, data science, and machine learning, with a focus on building models
+          that are rigorous, interpretable, and useful for decision-making.
+        </p>
+        <p>
+          A central theme across my work is the integration of mechanistic modelling with modern
+          computational methods, including ordinary differential equation models, statistical learning,
+          forecasting, uncertainty analysis, explainable AI, and simulation-based approaches.
+        </p>
       </div>
 
-      <!-- ── EPIDEMIOLOGY ── -->
-      <div class="rb flip">
-        <div class="rb-text">
-          <span class="rb-tag" style="background:#b83030;">Theme 1</span>
-          <h2>Mathematical Epidemiology &amp; Disease Modelling</h2>
-          <p>
-            This work develops and analyses mathematical models for infectious disease transmission, public health risk, and outbreak response. It includes compartmental epidemic models, risk-stratified population models, vaccination dynamics, limited-data forecasting, and model-based evaluation of disease control strategies.
-          </p>
-          <p>
-            Applications span rotavirus, COVID-19, hand-foot-and-mouth disease, mpox, and other emerging infectious disease settings — combining analytical methods, numerical simulation, and data-driven approaches to support public health interpretation and preparedness.
-          </p>
-        </div>
-        <div class="rb-img">
-          <!-- Epidemic curve SVG -->
-          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <rect width="260" height="260" fill="#fceeed"/>
-            <!-- axes -->
-            <line x1="35" y1="220" x2="240" y2="220" stroke="#b83030" stroke-width="1.5" opacity="0.5"/>
-            <line x1="35" y1="30"  x2="35"  y2="220" stroke="#b83030" stroke-width="1.5" opacity="0.5"/>
-            <!-- SIR curves -->
-            <!-- S: decreasing -->
-            <path d="M35 50 C80 52 110 80 160 160 S220 210 240 215" fill="none" stroke="#1e4d8c" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- I: bell -->
-            <path d="M35 215 C55 210 80 140 115 90 S160 60 185 80 S220 160 240 215" fill="none" stroke="#b83030" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- R: increasing -->
-            <path d="M35 215 C70 215 100 200 140 175 S200 140 240 100" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- peak marker -->
-            <line x1="115" y1="88" x2="115" y2="220" stroke="#b83030" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-            <circle cx="115" cy="88" r="4" fill="#b83030"/>
-            <!-- legend -->
-            <rect x="155" y="38" width="75" height="62" rx="5" fill="white" opacity="0.75"/>
-            <line x1="162" y1="52" x2="180" y2="52" stroke="#1e4d8c" stroke-width="2"/>
-            <text x="184" y="56" font-family="Inter,sans-serif" font-size="10" fill="#333">Susceptible</text>
-            <line x1="162" y1="68" x2="180" y2="68" stroke="#b83030" stroke-width="2"/>
-            <text x="184" y="72" font-family="Inter,sans-serif" font-size="10" fill="#333">Infected</text>
-            <line x1="162" y1="84" x2="180" y2="84" stroke="#2e7d32" stroke-width="2"/>
-            <text x="184" y="88" font-family="Inter,sans-serif" font-size="10" fill="#333">Recovered</text>
-            <!-- axis labels -->
-            <text x="137" y="238" font-family="Inter,sans-serif" font-size="10" fill="#999" text-anchor="middle">Time</text>
-            <text x="18" y="130" font-family="Inter,sans-serif" font-size="10" fill="#999" text-anchor="middle" transform="rotate(-90,18,130)">Population</text>
-          </svg>
-        </div>
-      </div>
+      <div class="research-themes">
 
-      <!-- ── ECOLOGY ── -->
-      <div class="rb">
-        <div class="rb-text">
-          <span class="rb-tag" style="background:#2e7d32;">Theme 2</span>
-          <h2>Ecological &amp; Climate-Health Systems</h2>
-          <p>
-            This research studies how environmental change, climate variability, and human activity shape ecological systems and population dynamics. A major focus is on aquatic ecosystems, fisheries, and the interaction between climate stressors and biological processes.
-          </p>
-          <p>
-            The doctoral research develops stage-structured mechanistic models to estimate maturation, mortality, and recruitment parameters for economically important fish species — supporting questions around climate adaptation, fisheries management, and the long-term resilience of ecological and human systems.
-          </p>
-        </div>
-        <div class="rb-img">
-          <!-- Fish / ecology SVG -->
-          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <rect width="260" height="260" fill="#edf6ee"/>
-            <!-- water waves -->
-            <path d="M0 175 Q32 160 65 175 Q97 190 130 175 Q162 160 195 175 Q227 190 260 175 L260 260 L0 260Z" fill="#c8e6c9" opacity="0.6"/>
-            <path d="M0 195 Q32 180 65 195 Q97 210 130 195 Q162 180 195 195 Q227 210 260 195 L260 260 L0 260Z" fill="#a5d6a7" opacity="0.5"/>
-            <!-- temperature arrow -->
-            <line x1="30" y1="50" x2="30" y2="160" stroke="#b83030" stroke-width="2" opacity="0.6"/>
-            <polygon points="30,40 24,55 36,55" fill="#b83030" opacity="0.7"/>
-            <text x="38" y="100" font-family="Inter,sans-serif" font-size="9" fill="#b83030" opacity="0.8">Temp ↑</text>
-            <!-- fish shapes -->
-            <!-- large fish -->
-            <ellipse cx="155" cy="120" rx="40" ry="18" fill="#1a6b5a" opacity="0.9"/>
-            <polygon points="195,120 215,105 215,135" fill="#1a6b5a" opacity="0.8"/>
-            <circle cx="140" cy="115" r="3" fill="#fff"/>
-            <!-- small fish -->
-            <ellipse cx="105" cy="155" rx="22" ry="10" fill="#2e7d32" opacity="0.85"/>
-            <polygon points="127,155 140,147 140,163" fill="#2e7d32" opacity="0.8"/>
-            <circle cx="96" cy="152" r="2" fill="#fff"/>
-            <!-- tiny fish -->
-            <ellipse cx="75"  cy="140" rx="14" ry="7" fill="#388e3c" opacity="0.7"/>
-            <polygon points="89,140 98,135 98,145" fill="#388e3c" opacity="0.7"/>
-            <!-- ODE structure label -->
-            <rect x="150" y="38" width="98" height="52" rx="5" fill="white" opacity="0.8"/>
-            <text x="199" y="55" font-family="Inter,sans-serif" font-size="9" fill="#2e7d32" text-anchor="middle" font-weight="600">Stage-structured</text>
-            <text x="199" y="68" font-family="Crimson Pro,serif" font-size="10" fill="#555" text-anchor="middle" font-style="italic">dN/dt = f(N, T, F)</text>
-            <text x="199" y="82" font-family="Inter,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Maturation · Mortality</text>
-          </svg>
-        </div>
-      </div>
+        <!-- ── EPIDEMIOLOGY ── -->
+        <div class="rb flip">
+          <div class="rb-text">
+            <span class="rb-tag" style="background:#b83030;">Theme 1</span>
+            <h2>Mathematical Epidemiology &amp; Disease Modelling</h2>
+            <p>
+              This work develops and analyses mathematical models for infectious disease transmission,
+              public health risk, and outbreak response. It includes compartmental epidemic models,
+              risk-stratified population models, vaccination dynamics, limited-data forecasting, and
+              model-based evaluation of disease control strategies.
+            </p>
+            <p>
+              Applications span rotavirus, COVID-19, hand-foot-and-mouth disease, mpox, and other
+              emerging infectious disease settings — combining analytical methods, numerical simulation,
+              and data-driven approaches to support public health interpretation and preparedness.
+            </p>
+          </div>
 
-      <!-- ── AI / DATA SCIENCE ── -->
-      <div class="rb flip">
-        <div class="rb-text">
-          <span class="rb-tag" style="background:#1e4d8c;">Theme 3</span>
-          <h2>AI, Data Science &amp; Forecasting</h2>
-          <p>
-            Machine learning, statistical modelling, and time-series methods are used to detect patterns, generate forecasts, and extract insight from complex datasets. The work is especially interested in models that are not only predictive, but also interpretable and useful for scientific understanding.
-          </p>
-          <p>
-            Applications include public health surveillance, environmental risk, agricultural systems, fisheries, and social-media-derived signals related to ecological and health-related change.
-          </p>
+          <div class="rb-img">
+            <img
+              src="assets/images/epidemiology.png"
+              alt="Illustration of infectious disease modelling and epidemic dynamics"
+              class="research-theme-img"
+            />
+          </div>
         </div>
-        <div class="rb-img">
-          <!-- ML / forecast SVG -->
-          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <rect width="260" height="260" fill="#eef3fb"/>
-            <!-- axes -->
-            <line x1="30" y1="220" x2="240" y2="220" stroke="#ccc" stroke-width="1.2"/>
-            <line x1="30" y1="30"  x2="30"  y2="220" stroke="#ccc" stroke-width="1.2"/>
-            <!-- observed data points -->
-            <circle cx="50"  cy="180" r="4" fill="#1e4d8c"/>
-            <circle cx="75"  cy="160" r="4" fill="#1e4d8c"/>
-            <circle cx="100" cy="145" r="4" fill="#1e4d8c"/>
-            <circle cx="125" cy="120" r="4" fill="#1e4d8c"/>
-            <circle cx="150" cy="105" r="4" fill="#1e4d8c"/>
-            <!-- fitted line -->
-            <path d="M45 185 Q90 155 150 105" fill="none" stroke="#1e4d8c" stroke-width="2" stroke-linecap="round"/>
-            <!-- forecast extension (dashed) -->
-            <path d="M150 105 Q185 80 230 60" fill="none" stroke="#1e4d8c" stroke-width="2" stroke-dasharray="5,4" stroke-linecap="round"/>
-            <!-- confidence interval -->
-            <path d="M150 105 Q185 70 230 45 L230 75 Q185 90 150 115Z" fill="#1e4d8c" opacity="0.12"/>
-            <!-- CI label -->
-            <text x="195" y="55" font-family="Inter,sans-serif" font-size="9" fill="#1e4d8c" opacity="0.8">95% CI</text>
-            <!-- forecast label -->
-            <rect x="148" y="38" width="70" height="22" rx="4" fill="#1e4d8c"/>
-            <text x="183" y="53" font-family="Inter,sans-serif" font-size="9" fill="#fff" text-anchor="middle" font-weight="600">Forecast</text>
-            <line x1="150" y1="60" x2="150" y2="220" stroke="#999" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
-            <text x="113" y="238" font-family="Inter,sans-serif" font-size="9" fill="#aaa" text-anchor="middle">Observed</text>
-            <text x="195" y="238" font-family="Inter,sans-serif" font-size="9" fill="#1e4d8c" text-anchor="middle">Predicted</text>
-          </svg>
-        </div>
-      </div>
 
-      <!-- ── XAI ── -->
-      <div class="rb">
-        <div class="rb-text">
-          <span class="rb-tag" style="background:#5c4b9e;">Theme 4</span>
-          <h2>Explainable AI &amp; Hybrid Modelling</h2>
-          <p>
-            This research develops explainable and hybrid modelling frameworks — combining mechanistic structure with machine learning to make complex models more transparent, auditable, and scientifically meaningful.
-          </p>
-          <p>
-            A key contribution uses Formal Concept Analysis to provide lattice-based explanations for ensemble learning methods such as XGBoost and Gradient Boosting. This framework organises feature relationships and model decision structures in a way that supports interpretation well beyond standard local explanation methods such as LIME and SHAP.
-          </p>
-        </div>
-        <div class="rb-img">
-          <!-- Concept lattice / XAI SVG -->
-          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <rect width="260" height="260" fill="#f0eef8"/>
-            <!-- lattice structure -->
-            <!-- top -->
-            <circle cx="130" cy="40"  r="16" fill="#5c4b9e"/>
-            <text x="130" y="44" font-family="Inter,sans-serif" font-size="9" fill="#fff" text-anchor="middle" dominant-baseline="central">Top</text>
-            <!-- level 2 -->
-            <circle cx="75"  cy="100" r="14" fill="#7c6bbf"/>
-            <circle cx="185" cy="100" r="14" fill="#7c6bbf"/>
-            <text x="75"  y="104" font-family="Inter,sans-serif" font-size="8" fill="#fff" text-anchor="middle" dominant-baseline="central">F₁F₂</text>
-            <text x="185" y="104" font-family="Inter,sans-serif" font-size="8" fill="#fff" text-anchor="middle" dominant-baseline="central">F₃F₄</text>
-            <!-- level 3 -->
-            <circle cx="50"  cy="165" r="13" fill="#9c8fd4"/>
-            <circle cx="130" cy="165" r="13" fill="#9c8fd4"/>
-            <circle cx="210" cy="165" r="13" fill="#9c8fd4"/>
-            <text x="50"  y="169" font-family="Inter,sans-serif" font-size="8" fill="#fff" text-anchor="middle" dominant-baseline="central">F₁</text>
-            <text x="130" y="169" font-family="Inter,sans-serif" font-size="8" fill="#fff" text-anchor="middle" dominant-baseline="central">F₂F₃</text>
-            <text x="210" y="169" font-family="Inter,sans-serif" font-size="8" fill="#fff" text-anchor="middle" dominant-baseline="central">F₄</text>
-            <!-- bottom -->
-            <circle cx="130" cy="225" r="14" fill="#bcaee8"/>
-            <text x="130" y="229" font-family="Inter,sans-serif" font-size="8" fill="#fff" text-anchor="middle" dominant-baseline="central">Bottom</text>
-            <!-- edges top→l2 -->
-            <line x1="130" y1="56"  x2="75"  y2="86"  stroke="#5c4b9e" stroke-width="1.5" opacity="0.6"/>
-            <line x1="130" y1="56"  x2="185" y2="86"  stroke="#5c4b9e" stroke-width="1.5" opacity="0.6"/>
-            <!-- edges l2→l3 -->
-            <line x1="75"  y1="114" x2="50"  y2="152" stroke="#7c6bbf" stroke-width="1.2" opacity="0.6"/>
-            <line x1="75"  y1="114" x2="130" y2="152" stroke="#7c6bbf" stroke-width="1.2" opacity="0.6"/>
-            <line x1="185" y1="114" x2="130" y2="152" stroke="#7c6bbf" stroke-width="1.2" opacity="0.6"/>
-            <line x1="185" y1="114" x2="210" y2="152" stroke="#7c6bbf" stroke-width="1.2" opacity="0.6"/>
-            <!-- edges l3→bottom -->
-            <line x1="50"  y1="178" x2="130" y2="211" stroke="#9c8fd4" stroke-width="1.2" opacity="0.5"/>
-            <line x1="130" y1="178" x2="130" y2="211" stroke="#9c8fd4" stroke-width="1.2" opacity="0.5"/>
-            <line x1="210" y1="178" x2="130" y2="211" stroke="#9c8fd4" stroke-width="1.2" opacity="0.5"/>
-            <!-- FCA label -->
-            <text x="130" y="14" font-family="Inter,sans-serif" font-size="9" fill="#5c4b9e" text-anchor="middle" font-weight="600" letter-spacing="0.08em">CONCEPT LATTICE (FCA)</text>
-          </svg>
-        </div>
-      </div>
+        <!-- ── ECOLOGY AND CLIMATE ── -->
+        <div class="rb">
+          <div class="rb-text">
+            <span class="rb-tag" style="background:#1a6b5a;">Theme 2</span>
+            <h2>Ecological and Climate-Health Systems</h2>
+            <p>
+              This research studies how environmental change, climate variability, and human activity
+              shape ecological systems and population dynamics. A major part of this work focuses on
+              aquatic ecosystems, fisheries, and the interaction between climate stressors and biological
+              processes.
+            </p>
+            <p>
+              My doctoral research develops stage-structured mechanistic models to estimate maturation,
+              mortality, and recruitment parameters for economically important fish species. This work
+              supports broader questions around climate adaptation, fisheries management, and the
+              long-term resilience of ecological and human systems.
+            </p>
+          </div>
 
-      <!-- ── DECISION MODELLING ── -->
-      <div class="rb flip">
-        <div class="rb-text">
-          <span class="rb-tag" style="background:#1a6b5a;">Theme 5</span>
-          <h2>Decision Modelling &amp; Policy-Relevant Analysis</h2>
-          <p>
-            Across all research themes, a shared interest is in how models can support better decisions under uncertainty. This includes evaluating intervention strategies, comparing policy scenarios, quantifying uncertainty, and translating model outputs into practical recommendations.
-          </p>
-          <p>
-            Applications range from public health intervention timing and resource allocation to ecological management thresholds and environmental planning — connecting rigorous mathematical analysis with real-world decision needs.
-          </p>
+          <div class="rb-img">
+            <img
+              src="assets/images/ecology-climate.png"
+              alt="Illustration of ecological systems, climate change, and aquatic population dynamics"
+              class="research-theme-img"
+            />
+          </div>
         </div>
-        <div class="rb-img">
-          <!-- Decision / control SVG -->
-          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <rect width="260" height="260" fill="#eaf4f2"/>
-            <!-- axes -->
-            <line x1="30" y1="220" x2="240" y2="220" stroke="#aaa" stroke-width="1.2"/>
-            <line x1="30" y1="30"  x2="30"  y2="220" stroke="#aaa" stroke-width="1.2"/>
-            <!-- uncontrolled (red) -->
-            <path d="M30 200 Q80 180 120 120 S175 55 240 35" fill="none" stroke="#b83030" stroke-width="2" stroke-dasharray="5,3" opacity="0.7"/>
-            <!-- controlled (teal) -->
-            <path d="M30 200 Q80 190 120 165 S185 140 240 130" fill="none" stroke="#1a6b5a" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- intervention arrow -->
-            <line x1="120" y1="60" x2="120" y2="220" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.7"/>
-            <polygon points="120,50 114,66 126,66" fill="#f59e0b" opacity="0.8"/>
-            <text x="128" y="58" font-family="Inter,sans-serif" font-size="9" fill="#f59e0b" font-weight="600">Intervention</text>
-            <!-- legend -->
-            <rect x="145" y="170" width="98" height="44" rx="5" fill="white" opacity="0.8"/>
-            <line x1="152" y1="182" x2="170" y2="182" stroke="#b83030" stroke-width="2" stroke-dasharray="4,2"/>
-            <text x="174" y="186" font-family="Inter,sans-serif" font-size="9" fill="#555">Uncontrolled</text>
-            <line x1="152" y1="200" x2="170" y2="200" stroke="#1a6b5a" stroke-width="2"/>
-            <text x="174" y="204" font-family="Inter,sans-serif" font-size="9" fill="#555">Controlled</text>
-            <!-- axis labels -->
-            <text x="137" y="238" font-family="Inter,sans-serif" font-size="9" fill="#aaa" text-anchor="middle">Time</text>
-            <text x="16" y="130" font-family="Inter,sans-serif" font-size="9" fill="#aaa" text-anchor="middle" transform="rotate(-90,16,130)">Burden</text>
-          </svg>
+
+        <!-- ── AI AND FORECASTING ── -->
+        <div class="rb flip">
+          <div class="rb-text">
+            <span class="rb-tag" style="background:#1e4d8c;">Theme 3</span>
+            <h2>AI, Data Science &amp; Forecasting</h2>
+            <p>
+              I use machine learning, statistical modelling, and time-series methods to detect patterns,
+              generate forecasts, and extract insight from complex datasets. This work is especially
+              interested in models that are not only predictive, but also interpretable and useful for
+              scientific understanding.
+            </p>
+            <p>
+              Applications include public health surveillance, environmental risk, agricultural systems,
+              fisheries, and social-media-derived signals related to ecological and health-related change.
+            </p>
+          </div>
+
+          <div class="rb-img">
+            <img
+              src="assets/images/ai-forecasting.png"
+              alt="Illustration of artificial intelligence, data science, and forecasting"
+              class="research-theme-img"
+            />
+          </div>
         </div>
+
+        <!-- ── XAI AND HYBRID MODELS ── -->
+        <div class="rb">
+          <div class="rb-text">
+            <span class="rb-tag" style="background:#5c4b9e;">Theme 4</span>
+            <h2>Explainable AI &amp; Hybrid Modelling</h2>
+            <p>
+              A key strand of my research focuses on explainable and hybrid modelling frameworks.
+              I develop approaches that combine mechanistic structure with machine learning, aiming
+              to make complex models more transparent, auditable, and scientifically meaningful.
+            </p>
+            <p>
+              One example is my work using Formal Concept Analysis to provide lattice-based
+              explanations for ensemble learning methods such as XGBoost and Gradient Boosting.
+              This framework helps organise feature relationships and model decision structures in
+              a way that supports interpretation beyond standard local explanation methods.
+            </p>
+          </div>
+
+          <div class="rb-img">
+            <img
+              src="assets/images/xai-hybrid.png"
+              alt="Illustration of explainable artificial intelligence and hybrid modelling"
+              class="research-theme-img"
+            />
+          </div>
+        </div>
+
+        <!-- ── DECISION MODELLING ── -->
+        <div class="rb flip">
+          <div class="rb-text">
+            <span class="rb-tag" style="background:#2e7d32;">Theme 5</span>
+            <h2>Decision Modelling &amp; Policy-Relevant Analysis</h2>
+            <p>
+              Across my research, I am interested in how models can support better decisions under
+              uncertainty. This includes evaluating intervention strategies, comparing policy scenarios,
+              quantifying uncertainty, and translating model outputs into practical recommendations.
+            </p>
+            <p>
+              This work connects mathematical modelling with real-world decision needs in public health,
+              ecological management, environmental planning, and resource allocation.
+            </p>
+          </div>
+
+          <div class="rb-img">
+            <img
+              src="assets/images/decision-modelling.png"
+              alt="Illustration of decision modelling, policy analysis, and intervention planning"
+              class="research-theme-img"
+            />
+          </div>
+        </div>
+
       </div>
 
       <!-- ── PRESENTATIONS ── -->
-      <div class="pres-block">
+      <div class="presentations-block">
         <h2>Selected Presentations</h2>
         <ul class="affil-list">
-          <li><strong>Invited (Virtual)</strong> — Universitas Terbuka, Indonesia: "A Mechanistic Stage-Structured Model..." (May 19, 2026)</li>
+          <li><strong>Invited (Virtual)</strong> — Universitas Terbuka, Indonesia: “A Mechanistic Stage-Structured Model...” (May 19, 2026)</li>
           <li><strong>Invited</strong> — Disease-Informed Modeling Lab, York University (November 4, 2025)</li>
           <li><strong>Invited</strong> — Grad Math &amp; Stats Seminar, York University (October 17, 2025)</li>
           <li><strong>Invited</strong> — LIAM Fall 2025 Seminar Series, York University (September 17, 2025)</li>
@@ -404,12 +351,15 @@
     </div>
   </section>
 
+  <!-- ══ FOOTER ══ -->
   <footer class="site-footer">
     <div class="footer-inner">
+
       <div class="footer-col">
         <strong>Sherif Eneye Shuaib</strong>
         <p>PhD Candidate · Applied Mathematics<br>York University, Toronto, Canada</p>
       </div>
+
       <div class="footer-col">
         <strong>Quick Links</strong>
         <ul>
@@ -421,14 +371,22 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <strong>Contact</strong>
         <p>Department of Mathematics and Statistics, York University<br>Toronto, Ontario, M3J 1L1, Canada</p>
-        <p><a href="mailto:sherifeneyeshuaib@gmail.com" style="color:rgba(255,255,255,0.65);">sherifeneyeshuaib@gmail.com</a></p>
+        <p>
+          <a href="mailto:sherifeneyeshuaib@gmail.com" style="color:rgba(255,255,255,0.65);">
+            sherifeneyeshuaib@gmail.com
+          </a>
+        </p>
       </div>
+
     </div>
+
     <div class="footer-copy">© 2025 Sherif Eneye Shuaib. All Rights Reserved.</div>
   </footer>
 
 </body>
 </html>
+```
