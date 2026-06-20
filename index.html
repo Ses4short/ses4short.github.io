@@ -175,10 +175,9 @@
 
     /* ── ABOUT SECTION ── */
     .about-strip {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
     .about-text p { margin-bottom: 0.9rem; line-height: 1.78; }
     .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
@@ -455,10 +454,10 @@
             The lab operates through a structured five-stage pipeline: data integration → mechanistic modelling → statistical inference and machine learning → decision analysis and optimisation → translation into forecasting tools and policy-relevant outputs.
           </p>
         </div>
-        <div class="about-stats" style="flex-shrink:0;">
+        <div class="about-stats" style="width:100%;">
           <!-- Animated research network -->
-          <canvas id="researchNet" width="420" height="420"
-            style="border-radius:12px; background:#f4f6fb; display:block; width:100%; max-width:420px;"></canvas>
+          <canvas id="researchNet" width="700" height="500"
+            style="border-radius:12px; background:#f4f6fb; display:block; width:100%; max-width:700px; margin:0 auto;"></canvas>
           <p style="font-size:0.7rem;text-align:center;color:#999;margin-top:0.5rem;font-family:Inter,sans-serif;letter-spacing:0.06em;text-transform:uppercase;">Research connections</p>
           <script>
           (function(){
@@ -467,17 +466,17 @@
             const W = canvas.width, H = canvas.height;
             const CX = W/2, CY = H/2;
             const nodes = [
-              { label:'MAIDES',  x:CX,     y:CY,     r:34, color:'#3b0d6b', pulse:0   },
-              { label:'Math',    x:CX,     y:68,     r:24, color:'#1e4d8c', pulse:0.4 },
-              { label:'AI',      x:CX+130, y:CY-65,  r:24, color:'#b83030', pulse:0.8 },
-              { label:'Disease', x:CX+115, y:CY+95,  r:24, color:'#993c1d', pulse:1.2 },
-              { label:'Ecology', x:CX-130, y:CY+80,  r:24, color:'#2e7d32', pulse:1.6 },
-              { label:'Systems', x:CX-120, y:CY-72,  r:24, color:'#1a6b5a', pulse:2.0 },
+              { label:'MAIDES',  x:CX,     y:CY,     r:46, color:'#3b0d6b', pulse:0   },
+              { label:'Mathematics', x:CX,  y:72,    r:34, color:'#1e4d8c', pulse:0.4 },
+              { label:'AI',      x:CX+200, y:CY-80,  r:34, color:'#b83030', pulse:0.8 },
+              { label:'Disease', x:CX+185, y:CY+110, r:34, color:'#993c1d', pulse:1.2 },
+              { label:'Ecology', x:CX-200, y:CY+100, r:34, color:'#2e7d32', pulse:1.6 },
+              { label:'Systems', x:CX-190, y:CY-85,  r:34, color:'#1a6b5a', pulse:2.0 },
             ];
             const edges=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[2,3],[3,4],[4,5],[5,1]];
             const floats=nodes.map((n,i)=>({
               ox:n.x,oy:n.y,
-              ax:(Math.random()-.5)*22,ay:(Math.random()-.5)*22,
+              ax:(Math.random()-.5)*28,ay:(Math.random()-.5)*28,
               sx:.35+Math.random()*.35,sy:.35+Math.random()*.35,
               px:Math.random()*Math.PI*2,py:Math.random()*Math.PI*2,
             }));
@@ -496,18 +495,18 @@
                 ctx.strokeStyle='rgba(90,70,150,.15)';ctx.lineWidth=1;ctx.stroke();
                 const prog=((pt+ei*.38)%1);
                 const px=na.x+(nb.x-na.x)*prog,py=na.y+(nb.y-na.y)*prog;
-                const g=ctx.createRadialGradient(px,py,0,px,py,9);
+                const g=ctx.createRadialGradient(px,py,0,px,py,14);
                 g.addColorStop(0,'rgba(160,100,255,.9)');g.addColorStop(1,'rgba(160,100,255,0)');
-                ctx.beginPath();ctx.arc(px,py,9,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+                ctx.beginPath();ctx.arc(px,py,14,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
               });
               nodes.forEach((n,i)=>{
-                const rr=n.r+5+Math.sin(t*1.5+n.pulse)*4;
+                const rr=n.r+8+Math.sin(t*1.5+n.pulse)*6;
                 ctx.beginPath();ctx.arc(n.x,n.y,rr,0,Math.PI*2);
                 ctx.strokeStyle=n.color+'55';ctx.lineWidth=1.5;ctx.stroke();
                 ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
                 ctx.fillStyle=n.color;ctx.fill();
                 ctx.fillStyle='#fff';
-                ctx.font=(i===0?'bold 13px':'12px')+' Inter,sans-serif';
+                ctx.font=(i===0?'bold 17px':'14px')+' Inter,sans-serif';
                 ctx.textAlign='center';ctx.textBaseline='middle';
                 ctx.fillText(n.label,n.x,n.y);
               });
