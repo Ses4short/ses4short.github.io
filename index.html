@@ -176,11 +176,11 @@
     /* ── ABOUT SECTION ── */
     .about-strip {
       display: grid;
-      grid-template-columns: 1fr 480px;
-      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
       align-items: center;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 860px) {
       .about-strip { grid-template-columns: 1fr; }
     }
     .about-text p { margin-bottom: 0.9rem; line-height: 1.78; }
@@ -460,9 +460,28 @@
         </div>
         <div class="about-stats">
           <!-- Animated research network -->
-          <canvas id="researchNet" width="480" height="480"
-            style="border-radius:12px; background:#f4f6fb; display:block; width:100%;"></canvas>
-          <p style="font-size:0.7rem;text-align:center;color:#999;margin-top:0.5rem;font-family:Inter,sans-serif;letter-spacing:0.06em;text-transform:uppercase;">Research connections</p>
+          <div style="position:relative; width:100%;">
+            <canvas id="researchNet" width="520" height="520"
+              style="border-radius:14px; background:#f0eef8; display:block; width:100%; height:auto;"></canvas>
+            <span style="
+              position:absolute;
+              top:16px;
+              left:50%;
+              transform:translateX(-50%);
+              font-family:Inter,sans-serif;
+              font-size:0.68rem;
+              font-weight:700;
+              letter-spacing:0.18em;
+              text-transform:uppercase;
+              color:#3b0d6b;
+              background:rgba(240,238,248,0.88);
+              padding:4px 14px;
+              border-radius:20px;
+              border:1px solid rgba(59,13,107,0.15);
+              white-space:nowrap;
+              pointer-events:none;
+            ">Research Connections</span>
+          </div>
           <script>
           (function(){
             const canvas = document.getElementById('researchNet');
@@ -470,12 +489,12 @@
             const W = canvas.width, H = canvas.height;
             const CX = W/2, CY = H/2;
             const nodes = [
-              { label:'MAIDES',      x:CX,     y:CY,     r:44, color:'#3b0d6b', pulse:0   },
-              { label:'Mathematics', x:CX,     y:55,     r:42, color:'#1e4d8c', pulse:0.4 },
-              { label:'AI',          x:CX+152, y:CY-88,  r:36, color:'#b83030', pulse:0.8 },
-              { label:'Disease',     x:CX+145, y:CY+98,  r:36, color:'#993c1d', pulse:1.2 },
-              { label:'Ecology',     x:CX-152, y:CY+90,  r:36, color:'#2e7d32', pulse:1.6 },
-              { label:'Systems',     x:CX-148, y:CY-84,  r:36, color:'#1a6b5a', pulse:2.0 },
+              { label:'MAIDES',      x:CX,     y:CY,     r:48, color:'#3b0d6b', pulse:0   },
+              { label:'Mathematics', x:CX,     y:58,     r:44, color:'#1e4d8c', pulse:0.4 },
+              { label:'AI',          x:CX+165, y:CY-95,  r:40, color:'#b83030', pulse:0.8 },
+              { label:'Disease',     x:CX+158, y:CY+108, r:40, color:'#993c1d', pulse:1.2 },
+              { label:'Ecology',     x:CX-165, y:CY+100, r:40, color:'#2e7d32', pulse:1.6 },
+              { label:'Systems',     x:CX-160, y:CY-90,  r:40, color:'#1a6b5a', pulse:2.0 },
             ];
             const edges=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[2,3],[3,4],[4,5],[5,1]];
             const floats=nodes.map((n,i)=>({
