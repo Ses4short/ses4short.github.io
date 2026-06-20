@@ -3,141 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MAIDES Lab — Mathematics, AI, Disease, Ecology, and Systems. Led by Sherif Eneye Shuaib. Data-driven mathematical modelling and decision intelligence for health and ecological risk." />
+  <meta name="description" content="MAIDES Lab — Mathematics, AI, Disease, Ecology, and Systems. Led by Sherif Eneye Shuaib." />
   <title>Sherif Eneye Shuaib — MAIDES Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ── MAIDES wordmark ── */
-    .maides-wrap {
+    /* ── BASE OVERRIDES for this page ── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a0533 0%, #3b0d6b 45%, #5c2d91 100%) !important;
+      min-height: 520px;
       display: flex;
-      justify-content: center;
-      margin: 2.2rem 0 1.6rem;
+      align-items: center;
+      padding: 4rem 2rem;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase !important;
+      color: #f59e0b !important;
+      margin-bottom: 1.2rem !important;
+    }
+    .hero h1 {
+      font-family: 'Crimson Pro', Georgia, serif !important;
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem) !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
+      line-height: 1.12 !important;
+      margin-bottom: 1.2rem !important;
+    }
+    .hero-desc {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1rem !important;
+      color: rgba(255,255,255,0.78) !important;
+      line-height: 1.75 !important;
+      max-width: 480px !important;
+      margin-bottom: 2rem !important;
+      font-weight: 300 !important;
+    }
+    .hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn-hero-primary {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.65rem 1.5rem;
+      background: #f59e0b;
+      color: #1a0533;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-hero-primary:hover { background: #fbbf24; }
+    .btn-hero-outline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.65rem 1.5rem;
+      background: transparent;
+      color: #ffffff;
+      border: 1.5px solid rgba(255,255,255,0.45);
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-hero-outline:hover { border-color: #fff; color: #fff; }
+
+    /* ── MAIDES WORDMARK ── */
+    .maides-wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      line-height: 1;
+      filter: drop-shadow(0 4px 24px rgba(0,0,0,0.3));
+    }
+    .maides-wordmark .letter {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: clamp(72px, 9vw, 108px);
+      font-weight: 600;
+      line-height: 1;
+      position: relative;
+      display: inline-block;
+    }
+    .maides-wordmark .letter::after {
+      content: attr(data-letter);
+      position: absolute;
+      inset: 0;
+      background-size: 22px 22px;
+      background-position: center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: 0.35;
+    }
+    /* Individual letter colors */
+    .ltr-M { color: #60a5fa; } /* blue */
+    .ltr-A { color: #f87171; } /* red */
+    .ltr-I { color: #93c5fd; } /* light blue */
+    .ltr-D { color: #fca5a5; } /* light red */
+    .ltr-E { color: #6ee7b7; } /* teal/green */
+    .ltr-S { color: #34d399; } /* green */
+
+    /* Texture overlays via SVG patterns embedded inline */
+    .ltr-M { background: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.06) 6px, rgba(255,255,255,0.06) 7px); -webkit-background-clip: text; background-clip: text; }
+
+    .wordmark-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+    .wordmark-sub {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0;
+      align-items: center;
+    }
+    .wordmark-sub-word {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0 0;
+    }
+    .wordmark-sub-sep {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      margin: 0 0.45rem;
+    }
+    .wordmark-tagline {
+      margin-top: 0.6rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.01em;
     }
 
-    /* ── Pipeline diagram section ── */
+    /* color bar under wordmark */
+    .wordmark-bar {
+      display: flex;
+      height: 3px;
+      width: 100%;
+      margin-top: 0.7rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .wordmark-bar span { flex: 1; }
+    .bar-blue   { background: #60a5fa; }
+    .bar-red    { background: #f87171; }
+    .bar-lred   { background: #fca5a5; }
+    .bar-teal   { background: #6ee7b7; }
+    .bar-green  { background: #34d399; }
+
+    /* ── ABOUT SECTION ── */
+    .about-strip {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-text p { margin-bottom: 0.9rem; line-height: 1.78; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .stat-box {
+      background: #f4f6fb;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      min-width: 100px;
+    }
+    .stat-box .num {
+      display: block;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #3b0d6b;
+      line-height: 1;
+    }
+    .stat-box .lbl {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    /* ── PIPELINE ── */
     .pipeline-section {
-      background: #f4f6fa;
+      background: #f4f6fb;
       border-top: 1px solid #e4e8f0;
       border-bottom: 1px solid #e4e8f0;
     }
-    .pipeline-section .section-inner {
-      max-width: 860px;
-    }
 
-    /* ── Theme cards ── */
+    /* ── THEME CARDS ── */
     .theme-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.1rem;
       margin-top: 1.6rem;
     }
     .theme-card {
       border-radius: 8px;
-      padding: 1.4rem 1.5rem;
-      border-top: 3px solid transparent;
+      padding: 1.3rem 1.4rem;
+      border-left: 4px solid transparent;
     }
     .theme-card h3 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
-    .theme-card p {
-      font-size: 0.9rem;
-      line-height: 1.65;
-      color: #555;
-    }
-    .theme-card.blue  { background: #eef3fb; border-top-color: #1e4d8c; }
-    .theme-card.blue  h3 { color: #1e4d8c; }
-    .theme-card.red   { background: #fceeed; border-top-color: #b83030; }
-    .theme-card.red   h3 { color: #b83030; }
-    .theme-card.green { background: #edf6ee; border-top-color: #2e7d32; }
-    .theme-card.green h3 { color: #2e7d32; }
-    .theme-card.teal  { background: #eaf4f2; border-top-color: #1a6b5a; }
-    .theme-card.teal  h3 { color: #1a6b5a; }
-    .theme-card.purple{ background: #f0eef8; border-top-color: #5c4b9e; }
-    .theme-card.purple h3 { color: #5c4b9e; }
+    .theme-card p { font-size: 0.88rem; line-height: 1.65; color: #555; margin: 0; }
+    .tc-blue   { background: #eef3fb; border-left-color: #1e4d8c; }
+    .tc-blue   h3 { color: #1e4d8c; }
+    .tc-teal   { background: #eaf4f2; border-left-color: #1a6b5a; }
+    .tc-teal   h3 { color: #1a6b5a; }
+    .tc-red    { background: #fceeed; border-left-color: #b83030; }
+    .tc-red    h3 { color: #b83030; }
+    .tc-purple { background: #f0eef8; border-left-color: #5c4b9e; }
+    .tc-purple h3 { color: #5c4b9e; }
+    .tc-green  { background: #edf6ee; border-left-color: #2e7d32; }
+    .tc-green  h3 { color: #2e7d32; }
 
-    /* ── About strip ── */
-    .about-strip {
-      display: flex;
-      gap: 2.5rem;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .about-text { flex: 1; min-width: 260px; }
-    .about-stats {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .stat-box {
-      text-align: center;
-      background: #f4f6fa;
-      border-radius: 8px;
-      padding: 1rem 1.4rem;
-      min-width: 120px;
-    }
-    .stat-box .num {
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #1e4d8c;
-      display: block;
-      line-height: 1;
-    }
-    .stat-box .lbl {
-      font-size: 0.75rem;
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 0.25rem;
-      display: block;
-    }
-    .stat-row { display: flex; gap: 1rem; }
-
-    /* ── News ── */
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.4rem;
-    }
-    .news-item {
-      border-left: 3px solid #1e4d8c;
-      padding: 0.8rem 1rem;
-      background: #f9fafb;
-      border-radius: 0 6px 6px 0;
-    }
-    .news-date {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #1e4d8c;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-    .news-item p { font-size: 0.9rem; line-height: 1.6; color: #444; margin: 0; }
-
-    /* ── Publications strip ── */
+    /* ── PUBLICATIONS ── */
+    .bg-subtle { background: #f4f6fb; }
     .pub-list { list-style: none; padding: 0; margin: 0; }
-    .pub-item {
-      padding: 1rem 0;
-      border-bottom: 1px solid #e8eaf0;
-    }
+    .pub-item { padding: 1rem 0; border-bottom: 1px solid #e8eaf0; }
     .pub-item:last-child { border-bottom: none; }
     .pub-journal {
-      font-size: 0.72rem;
+      display: block;
+      font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #2e7d32;
-      display: block;
       margin-bottom: 0.3rem;
     }
     .pub-title {
@@ -147,13 +266,68 @@
       margin: 0 0 0.25rem;
       line-height: 1.45;
     }
-    .pub-authors { font-size: 0.83rem; color: #777; margin: 0; }
-    .bg-subtle { background: #f4f6fa; }
+    .pub-authors { font-size: 0.82rem; color: #777; margin: 0; }
 
-    @media (max-width: 600px) {
-      .about-strip { flex-direction: column; }
-      .stat-row { flex-direction: column; }
-      .theme-grid { grid-template-columns: 1fr; }
+    /* ── NEWS ── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.4rem;
+    }
+    .news-item {
+      border-left: 3px solid #3b0d6b;
+      padding: 0.8rem 1rem;
+      background: #f9fafb;
+      border-radius: 0 6px 6px 0;
+    }
+    .news-date {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #3b0d6b;
+      margin-bottom: 0.4rem;
+    }
+    .news-item p { font-size: 0.88rem; line-height: 1.6; color: #444; margin: 0; }
+
+    .section-title {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 0.2rem;
+    }
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #3b0d6b;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .btn-outline-dark {
+      display: inline-block;
+      margin-top: 1.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1.3rem;
+      border: 1.5px solid #3b0d6b;
+      color: #3b0d6b;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.14s, color 0.14s;
+    }
+    .btn-outline-dark:hover { background: #3b0d6b; color: #fff; }
+
+    @media (max-width: 740px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-strip { grid-template-columns: 1fr; }
+      .maides-wordmark .letter { font-size: 60px; }
     }
   </style>
 </head>
@@ -180,321 +354,247 @@
     </div>
   </header>
 
-  <!-- ══════════════════════════════════
-       HERO
-  ════════════════════════════════════ -->
+  <!-- ══ HERO ══ -->
   <section class="hero">
     <div class="hero-inner">
+
+      <!-- Left: text -->
       <div class="hero-text">
-        <p class="hero-eyebrow">PhD Candidate · York University & Prince of Songkla University</p>
+        <p class="hero-eyebrow">PhD Candidate · York University &amp; Prince of Songkla University</p>
         <h1>Modelling systems.<br>Explaining decisions.</h1>
         <p class="hero-desc">
           Applied mathematician and data scientist working at the intersection of mechanistic modelling and machine learning — developing rigorous, interpretable analytical systems for health and ecological risk.
         </p>
         <div class="hero-links">
-          <a href="research.html" class="btn-primary">Research</a>
-          <a href="publications.html" class="btn-outline">Publications</a>
+          <a href="research.html" class="btn-hero-primary">Research</a>
+          <a href="publications.html" class="btn-hero-outline">Publications</a>
         </div>
       </div>
-      <div class="hero-photo">
-        <!-- MAIDES SVG Wordmark -->
-        <svg viewBox="0 0 420 340" width="100%" role="img"
-             xmlns="http://www.w3.org/2000/svg"
-             style="max-width:420px; display:block; margin:0 auto;">
-          <title>MAIDES Lab — Mathematics, AI, Disease, Ecology, Systems</title>
-          <defs>
-            <!-- Network node pattern for M -->
-            <pattern id="net" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-              <circle cx="14" cy="14" r="1.5" fill="rgba(255,255,255,0.35)"/>
-              <line x1="14" y1="14" x2="28" y2="0"  stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
-              <line x1="14" y1="14" x2="0"  y2="28" stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
-            </pattern>
-            <!-- Circuit pattern for AI -->
-            <pattern id="circ" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-              <rect x="10" y="10" width="4" height="4" rx="1" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
-              <line x1="0"  y1="12" x2="10" y2="12" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-              <line x1="14" y1="12" x2="24" y2="12" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-              <line x1="12" y1="0"  x2="12" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-            </pattern>
-            <!-- Contour pattern for E/S (ecology) -->
-            <pattern id="contour" x="0" y="0" width="32" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 Q8 2 16 10 Q24 18 32 10" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
-              <path d="M0 16 Q8 8 16 16 Q24 24 32 16" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
-            </pattern>
-            <!-- Virus / gear pattern for D -->
-            <pattern id="virus" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-              <circle cx="13" cy="13" r="4" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
-              <line x1="13" y1="2"  x2="13" y2="7"  stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
-              <line x1="13" y1="19" x2="13" y2="24" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
-              <line x1="2"  y1="13" x2="7"  y2="13" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
-              <line x1="19" y1="13" x2="24" y2="13" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
-            </pattern>
-          </defs>
 
-          <!-- ── Letter M ── -->
-          <clipPath id="clip-M">
-            <text x="0" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">M</text>
-          </clipPath>
-          <rect x="0" y="0" width="145" height="200" fill="#1e4d8c" clip-path="url(#clip-M)"/>
-          <rect x="0" y="0" width="145" height="200" fill="url(#net)" clip-path="url(#clip-M)"/>
+      <!-- Right: MAIDES wordmark (pure HTML/CSS — no clipPath) -->
+      <div class="wordmark-wrap">
+        <div class="maides-wordmark">
+          <span class="letter ltr-M">M</span>
+          <span class="letter ltr-A">A</span>
+          <span class="letter ltr-I">I</span>
+          <span class="letter ltr-D">D</span>
+          <span class="letter ltr-E">E</span>
+          <span class="letter ltr-S">S</span>
+        </div>
 
-          <!-- ── Letter A ── -->
-          <clipPath id="clip-A">
-            <text x="125" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">A</text>
-          </clipPath>
-          <rect x="125" y="0" width="112" height="200" fill="#b83030" clip-path="url(#clip-A)"/>
+        <!-- Colour bar -->
+        <div class="wordmark-bar" style="width:100%;">
+          <span class="bar-blue"></span>
+          <span class="bar-red"></span>
+          <span class="bar-lred"></span>
+          <span class="bar-teal"></span>
+          <span class="bar-green"></span>
+        </div>
 
-          <!-- ── Letter I ── -->
-          <clipPath id="clip-I">
-            <text x="232" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">I</text>
-          </clipPath>
-          <rect x="232" y="0" width="50" height="200" fill="#1e4d8c" clip-path="url(#clip-I)"/>
-          <rect x="232" y="0" width="50" height="200" fill="url(#circ)" clip-path="url(#clip-I)"/>
+        <!-- Subtitle — colour-coded words -->
+        <div class="wordmark-sub" style="flex-wrap:wrap; row-gap:0.2rem; margin-top:0.8rem;">
+          <span class="wordmark-sub-word" style="color:#60a5fa;">Mathematics</span>
+          <span class="wordmark-sub-sep">·</span>
+          <span class="wordmark-sub-word" style="color:#f87171;">AI</span>
+          <span class="wordmark-sub-sep">·</span>
+          <span class="wordmark-sub-word" style="color:#fca5a5;">Disease</span>
+          <span class="wordmark-sub-sep">·</span>
+          <span class="wordmark-sub-word" style="color:#6ee7b7;">Ecology</span>
+          <span class="wordmark-sub-sep">·</span>
+          <span class="wordmark-sub-word" style="color:#34d399;">Systems</span>
+        </div>
 
-          <!-- ── Letter D ── -->
-          <clipPath id="clip-D">
-            <text x="272" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">D</text>
-          </clipPath>
-          <rect x="272" y="0" width="120" height="200" fill="#b83030" clip-path="url(#clip-D)"/>
-          <rect x="272" y="0" width="120" height="200" fill="url(#virus)" clip-path="url(#clip-D)"/>
+        <p class="wordmark-tagline">MAIDES Lab · Data-Driven Mathematical Modelling &amp; Decision Intelligence</p>
 
-          <!-- ── Letter E ── -->
-          <clipPath id="clip-E">
-            <text x="368" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">E</text>
-          </clipPath>
-          <rect x="368" y="0" width="100" height="200" fill="#2e7d32" clip-path="url(#clip-E)"/>
-          <rect x="368" y="0" width="100" height="200" fill="url(#contour)" clip-path="url(#clip-E)"/>
-
-          <!-- small circle overlay between AI letters — "brain" node -->
-          <circle cx="278" cy="80" r="38" fill="none" stroke="rgba(30,77,140,0.18)" stroke-width="1.5"/>
-          <circle cx="278" cy="80" r="28" fill="none" stroke="rgba(184,48,48,0.15)" stroke-width="1"/>
-          <circle cx="278" cy="80" r="4" fill="#1e4d8c" opacity="0.6"/>
-          <circle cx="254" cy="60" r="2.5" fill="#b83030" opacity="0.55"/>
-          <circle cx="302" cy="60" r="2.5" fill="#2e7d32" opacity="0.55"/>
-          <circle cx="254" cy="100" r="2.5" fill="#5c4b9e" opacity="0.5"/>
-          <circle cx="302" cy="100" r="2.5" fill="#1a6b5a" opacity="0.5"/>
-          <line x1="278" y1="80" x2="254" y2="60"  stroke="rgba(30,77,140,0.25)" stroke-width="0.9"/>
-          <line x1="278" y1="80" x2="302" y2="60"  stroke="rgba(184,48,48,0.25)" stroke-width="0.9"/>
-          <line x1="278" y1="80" x2="254" y2="100" stroke="rgba(92,75,158,0.25)" stroke-width="0.9"/>
-          <line x1="278" y1="80" x2="302" y2="100" stroke="rgba(26,107,90,0.25)" stroke-width="0.9"/>
-
-          <!-- ES letters -->
-          <clipPath id="clip-S">
-            <text x="446" y="178" font-family="'Crimson Pro', Georgia, serif" font-size="195" font-weight="600">S</text>
-          </clipPath>
-          <rect x="446" y="0" width="90" height="200" fill="#1a6b5a" clip-path="url(#clip-S)"/>
-          <rect x="446" y="0" width="90" height="200" fill="url(#contour)" clip-path="url(#clip-S)"/>
-
-          <!-- ── Subtitle row ── -->
-          <!-- Coloured rule lines -->
-          <rect x="0"   y="215" width="90"  height="2" fill="#1e4d8c" rx="1"/>
-          <rect x="94"  y="215" width="90"  height="2" fill="#b83030" rx="1"/>
-          <rect x="188" y="215" width="90"  height="2" fill="#2e7d32" rx="1"/>
-          <rect x="282" y="215" width="90"  height="2" fill="#1a6b5a" rx="1"/>
-          <rect x="376" y="215" width="58"  height="2" fill="#5c4b9e" rx="1"/>
-
-          <!-- Subtitle text — colour-coded per word -->
-          <text y="244" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
-            <tspan x="0"   fill="#1e4d8c">Mathematics,</tspan>
-            <tspan dx="6"  fill="#555">AI,</tspan>
-            <tspan dx="6"  fill="#b83030">Disease,</tspan>
-            <tspan dx="6"  fill="#2e7d32">Ecology,</tspan>
-            <tspan dx="6"  fill="#1a6b5a">Systems</tspan>
-          </text>
-
-          <!-- Lab name -->
-          <text x="0" y="278" font-family="'Crimson Pro', Georgia, serif" font-size="16" font-weight="400" fill="#888" font-style="italic">
-            MAIDES Lab · Data-Driven Mathematical Modelling &amp; Decision Intelligence
-          </text>
+        <!-- Network decoration SVG — pure decoration, not clipPath -->
+        <svg width="100%" viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg"
+             style="margin-top:1rem; opacity:0.45; max-width:340px;">
+          <!-- nodes -->
+          <circle cx="20"  cy="30" r="3" fill="#60a5fa"/>
+          <circle cx="80"  cy="15" r="3" fill="#f87171"/>
+          <circle cx="80"  cy="45" r="2" fill="#fca5a5"/>
+          <circle cx="160" cy="30" r="4" fill="#ffffff"/>
+          <circle cx="240" cy="12" r="3" fill="#6ee7b7"/>
+          <circle cx="240" cy="48" r="2" fill="#34d399"/>
+          <circle cx="300" cy="30" r="3" fill="#6ee7b7"/>
+          <!-- edges -->
+          <line x1="20"  y1="30" x2="80"  y2="15" stroke="#60a5fa" stroke-width="0.8"/>
+          <line x1="20"  y1="30" x2="80"  y2="45" stroke="#60a5fa" stroke-width="0.8"/>
+          <line x1="80"  y1="15" x2="160" y2="30" stroke="#f87171" stroke-width="0.8"/>
+          <line x1="80"  y1="45" x2="160" y2="30" stroke="#fca5a5" stroke-width="0.8"/>
+          <line x1="160" y1="30" x2="240" y2="12" stroke="#6ee7b7" stroke-width="0.8"/>
+          <line x1="160" y1="30" x2="240" y2="48" stroke="#34d399" stroke-width="0.8"/>
+          <line x1="240" y1="12" x2="300" y2="30" stroke="#6ee7b7" stroke-width="0.8"/>
+          <line x1="240" y1="48" x2="300" y2="30" stroke="#34d399" stroke-width="0.8"/>
+          <!-- node labels -->
+          <text x="20"  y="10" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">Math</text>
+          <text x="80"  y="8"  font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">AI</text>
+          <text x="160" y="18" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-weight="500">MAIDES</text>
+          <text x="240" y="6"  font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">Ecology</text>
+          <text x="300" y="20" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">Systems</text>
         </svg>
       </div>
+
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       ABOUT / IDENTITY
-  ════════════════════════════════════ -->
+  <!-- ══ ABOUT ══ -->
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title">About the Lab</h2>
-      <div class="about-strip">
+      <span class="section-eyebrow">About the Lab</span>
+      <h2 class="section-title">MAIDES Lab</h2>
+      <div class="about-strip" style="margin-top:1.4rem;">
         <div class="about-text">
           <p>
             The <strong>MAIDES Lab</strong> — <strong>M</strong>athematics, <strong>A</strong>I, <strong>D</strong>isease, <strong>E</strong>cology, and <strong>S</strong>ystems — is dedicated to developing rigorous, interpretable, and practical analytical systems for health and ecological risk. The lab sits at the intersection of applied mathematics, epidemiology, ecology, and data science.
           </p>
-          <p style="margin-top:0.9rem;">
-            The research question driving all work here is: <em>how can mathematically rigorous and data-informed models improve our understanding of complex biological and health systems, and support better decisions under uncertainty?</em> Mathematical models are not treated as abstract endpoints — they are tools for integrating evidence, testing hypotheses, quantifying uncertainty, evaluating interventions, and generating actionable insight.
+          <p>
+            The central question driving all work here: <em>how can mathematically rigorous and data-informed models improve our understanding of complex biological systems, and support better decisions under uncertainty?</em> Models are not abstract endpoints — they are tools for integrating evidence, testing hypotheses, quantifying uncertainty, evaluating interventions, and generating actionable insight.
           </p>
-          <p style="margin-top:0.9rem;">
-            The lab operates through a structured five-stage pipeline: data integration, mechanistic and ecological modelling, statistical inference and machine learning, decision analysis and optimisation, and translation into forecasting tools and policy-relevant outputs.
+          <p>
+            The lab operates through a structured five-stage pipeline: data integration → mechanistic modelling → statistical inference and machine learning → decision analysis and optimisation → translation into forecasting tools and policy-relevant outputs.
           </p>
         </div>
         <div class="about-stats">
-          <div class="stat-row">
-            <div class="stat-box">
-              <span class="num">13</span>
-              <span class="lbl">Publications</span>
-            </div>
-            <div class="stat-box">
-              <span class="num">Q1</span>
-              <span class="lbl">Journal target</span>
-            </div>
+          <div class="stat-box">
+            <span class="num">13</span>
+            <span class="lbl">Publications</span>
           </div>
-          <div class="stat-row">
-            <div class="stat-box">
-              <span class="num">5</span>
-              <span class="lbl">Research themes</span>
-            </div>
-            <div class="stat-box">
-              <span class="num">4</span>
-              <span class="lbl">Disease areas</span>
-            </div>
+          <div class="stat-box">
+            <span class="num">Q1</span>
+            <span class="lbl">Journal tier</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">5</span>
+            <span class="lbl">Research themes</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">4</span>
+            <span class="lbl">Disease areas</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       PIPELINE
-  ════════════════════════════════════ -->
+  <!-- ══ PIPELINE ══ -->
   <section class="section pipeline-section">
     <div class="section-inner">
-      <h2 class="section-title">Five-Stage Research Pipeline</h2>
-      <svg width="100%" viewBox="0 0 820 110" role="img" xmlns="http://www.w3.org/2000/svg"
+      <span class="section-eyebrow">Research methodology</span>
+      <h2 class="section-title">Five-Stage Pipeline</h2>
+      <svg width="100%" viewBox="0 0 820 100" role="img" xmlns="http://www.w3.org/2000/svg"
            style="display:block; margin-top:1.4rem;">
         <title>MAIDES five-stage research pipeline</title>
-        <desc>Five sequential stages: Data Integration, Mechanistic Modelling, Inference and Learning, Decision Analysis, Translation and Use.</desc>
         <defs>
           <marker id="parr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#aab" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
-          <style>
-            .ps-t { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; }
-            .ps-s { font-family: 'Inter', sans-serif; font-size: 10px; fill: rgba(255,255,255,0.82); }
-            .ps-n { font-family: 'Inter', sans-serif; font-size: 10px; fill: #aab; }
-          </style>
         </defs>
-        <!-- Stage boxes -->
-        <rect x="0"   y="18" width="138" height="72" rx="7" fill="#1e4d8c"/>
-        <rect x="164" y="18" width="138" height="72" rx="7" fill="#1a6b5a"/>
-        <rect x="328" y="18" width="138" height="72" rx="7" fill="#5c4b9e"/>
-        <rect x="492" y="18" width="138" height="72" rx="7" fill="#b83030"/>
-        <rect x="656" y="18" width="138" height="72" rx="7" fill="#2e7d32"/>
+        <rect x="0"   y="10" width="142" height="72" rx="7" fill="#1e4d8c"/>
+        <rect x="168" y="10" width="142" height="72" rx="7" fill="#1a6b5a"/>
+        <rect x="336" y="10" width="142" height="72" rx="7" fill="#5c4b9e"/>
+        <rect x="504" y="10" width="142" height="72" rx="7" fill="#b83030"/>
+        <rect x="672" y="10" width="142" height="72" rx="7" fill="#2e7d32"/>
 
-        <!-- Stage numbers -->
-        <text class="ps-n" x="8" y="31">01</text>
-        <text class="ps-n" x="172" y="31">02</text>
-        <text class="ps-n" x="336" y="31">03</text>
-        <text class="ps-n" x="500" y="31">04</text>
-        <text class="ps-n" x="664" y="31">05</text>
+        <text x="71"  y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" font-weight="600" letter-spacing="0.08em">01</text>
+        <text x="239" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" font-weight="600" letter-spacing="0.08em">02</text>
+        <text x="407" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" font-weight="600" letter-spacing="0.08em">03</text>
+        <text x="575" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" font-weight="600" letter-spacing="0.08em">04</text>
+        <text x="743" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" font-weight="600" letter-spacing="0.08em">05</text>
 
-        <!-- Stage titles -->
-        <text class="ps-t" x="69"  y="54" text-anchor="middle" fill="#fff" dominant-baseline="central">Data</text>
-        <text class="ps-t" x="69"  y="69" text-anchor="middle" fill="#fff" dominant-baseline="central">Integration</text>
+        <text x="71"  y="50" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Data</text>
+        <text x="71"  y="65" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Integration</text>
 
-        <text class="ps-t" x="233" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Mechanistic</text>
-        <text class="ps-t" x="233" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">Modelling</text>
-        <text class="ps-s" x="233" y="77" text-anchor="middle" dominant-baseline="central">ODE · discrete · stochastic</text>
+        <text x="239" y="43" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Mechanistic</text>
+        <text x="239" y="58" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Modelling</text>
+        <text x="239" y="73" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" dominant-baseline="central">ODE · stochastic</text>
 
-        <text class="ps-t" x="397" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Inference &amp;</text>
-        <text class="ps-t" x="397" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">Learning</text>
-        <text class="ps-s" x="397" y="77" text-anchor="middle" dominant-baseline="central">Bayesian · ML · forecasting</text>
+        <text x="407" y="43" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Inference &amp;</text>
+        <text x="407" y="58" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Learning</text>
+        <text x="407" y="73" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" dominant-baseline="central">Bayesian · ML</text>
 
-        <text class="ps-t" x="561" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Decision</text>
-        <text class="ps-t" x="561" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">Analysis</text>
-        <text class="ps-s" x="561" y="77" text-anchor="middle" dominant-baseline="central">Optimal control · scenarios</text>
+        <text x="575" y="43" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Decision</text>
+        <text x="575" y="58" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Analysis</text>
+        <text x="575" y="73" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" dominant-baseline="central">Optimal control</text>
 
-        <text class="ps-t" x="725" y="47" text-anchor="middle" fill="#fff" dominant-baseline="central">Translation</text>
-        <text class="ps-t" x="725" y="62" text-anchor="middle" fill="#fff" dominant-baseline="central">&amp; Use</text>
-        <text class="ps-s" x="725" y="77" text-anchor="middle" dominant-baseline="central">Tools · policy · dashboards</text>
+        <text x="743" y="43" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">Translation</text>
+        <text x="743" y="58" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fff" font-weight="600" dominant-baseline="central">&amp; Use</text>
+        <text x="743" y="73" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" dominant-baseline="central">Tools · policy</text>
 
-        <!-- Arrows -->
-        <line x1="138" y1="54" x2="162" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
-        <line x1="302" y1="54" x2="326" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
-        <line x1="466" y1="54" x2="490" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
-        <line x1="630" y1="54" x2="654" y2="54" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="142" y1="46" x2="166" y2="46" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="310" y1="46" x2="334" y2="46" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="478" y1="46" x2="502" y2="46" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
+        <line x1="646" y1="46" x2="670" y2="46" stroke="#aab" stroke-width="1.2" marker-end="url(#parr)" opacity="0.6"/>
       </svg>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       RESEARCH THEMES
-  ════════════════════════════════════ -->
-  <section class="section research-areas">
+  <!-- ══ RESEARCH THEMES ══ -->
+  <section class="section">
     <div class="section-inner">
-      <h2 class="section-title">Core Research Themes</h2>
+      <span class="section-eyebrow">Core research themes</span>
+      <h2 class="section-title">What We Work On</h2>
       <div class="theme-grid">
-
-        <div class="theme-card blue">
+        <div class="theme-card tc-blue">
           <h3>Climate-Driven Disease Forecasting</h3>
-          <p>Province-level and regional transmission models where key epidemiological quantities depend on climatic and environmental drivers — temperature, rainfall, humidity, mobility. Probabilistic forecasts with uncertainty quantification and early-warning signal generation.</p>
+          <p>Transmission models where epidemiological dynamics depend on climatic and environmental drivers. Probabilistic forecasts with uncertainty quantification and early-warning signal generation.</p>
         </div>
-
-        <div class="theme-card teal">
+        <div class="theme-card tc-teal">
           <h3>One Health, Ecology &amp; AMR</h3>
-          <p>Mathematical and ecological models for systems where human, animal, and environmental processes interact — antimicrobial resistance, zoonotic spillover, cross-sector transmission pathways, and ecological interface dynamics.</p>
+          <p>Mathematical and ecological models for systems where human, animal, and environmental processes interact — antimicrobial resistance, zoonotic spillover, and cross-sector transmission.</p>
         </div>
-
-        <div class="theme-card red">
+        <div class="theme-card tc-red">
           <h3>Environmental Health &amp; Chronic Disease</h3>
-          <p>Time-series analysis, state-space models, and causal inference for long-term cumulative health burdens shaped by environmental exposures and service-system delays. Quantitative risk modelling for earlier detection and prevention.</p>
+          <p>Time-series analysis, state-space models, and causal inference for long-term cumulative health burdens shaped by environmental exposures and service-system delays.</p>
         </div>
-
-        <div class="theme-card purple">
+        <div class="theme-card tc-purple">
           <h3>Dynamic Intervention Design</h3>
-          <p>Optimal control methods, dynamic optimisation, and scenario simulation to evaluate intervention timing, intensity, and resource allocation. Converting model results into strategic recommendations for health systems.</p>
+          <p>Optimal control methods and scenario simulation to evaluate intervention timing, intensity, and resource allocation — converting model results into strategic recommendations.</p>
         </div>
-
-        <div class="theme-card green">
+        <div class="theme-card tc-green">
           <h3>Explainable AI &amp; Hybrid Models</h3>
-          <p>Lattice-theoretic frameworks using Formal Concept Analysis (FCA) to generate structural, hierarchical explanations for ensemble methods. Hybrid models integrating mechanistic structure with machine learning — interpretable and communicable to both scientific and policy audiences.</p>
+          <p>Lattice-theoretic frameworks using Formal Concept Analysis for ensemble methods. Hybrid models integrating mechanistic structure with machine learning — interpretable and policy-communicable.</p>
         </div>
-
       </div>
-      <p style="margin-top:1.4rem;">
-        <a href="research.html" class="btn-outline">Full Research Overview →</a>
-      </p>
+      <a href="research.html" class="btn-outline-dark">Full Research Overview →</a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       SELECTED PUBLICATIONS
-  ════════════════════════════════════ -->
-  <section class="section pubs-preview bg-subtle">
+  <!-- ══ PUBLICATIONS ══ -->
+  <section class="section bg-subtle">
     <div class="section-inner">
+      <span class="section-eyebrow">Recent work</span>
       <h2 class="section-title">Selected Publications</h2>
-      <ul class="pub-list">
+      <ul class="pub-list" style="margin-top:1.2rem;">
         <li class="pub-item">
           <span class="pub-journal">Ecological Modelling · Q1</span>
           <p class="pub-title">A mechanistic stage-structured model for estimating maturation, mortality, and recruitment parameters of three economically significant fish species in Canadian waters</p>
-          <p class="pub-authors">Shuaib SE, Rutayisire G, Han Q, Veprauskas A, & Kong JD. (2025)</p>
+          <p class="pub-authors">Shuaib SE, Rutayisire G, Han Q, Veprauskas A, &amp; Kong JD. (2025)</p>
         </li>
         <li class="pub-item">
           <span class="pub-journal">Intelligent Systems with Applications · Q1</span>
           <p class="pub-title">Formal concept views for explainable boosting: A lattice-theoretic framework for XGBoost and Gradient Boosting Models</p>
-          <p class="pub-authors">Shuaib SE, Riyapan P, & Muangprathub J. (2025)</p>
+          <p class="pub-authors">Shuaib SE, Riyapan P, &amp; Muangprathub J. (2025)</p>
         </li>
         <li class="pub-item">
           <span class="pub-journal">Environmental Advances · Q1</span>
           <p class="pub-title">Predicting adaptations of fish and fishing communities to rapid climate velocities in Canadian waters: A systematic review</p>
-          <p class="pub-authors">Fatima N, Shuaib SE, & Kong JD. (2023)</p>
+          <p class="pub-authors">Fatima N, Shuaib SE, &amp; Kong JD. (2023)</p>
         </li>
       </ul>
-      <a href="publications.html" class="btn-outline" style="margin-top:1.5rem;display:inline-block;">View All 13 Publications →</a>
+      <a href="publications.html" class="btn-outline-dark">View All 13 Publications →</a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       NEWS
-  ════════════════════════════════════ -->
-  <section class="section news-section">
+  <!-- ══ NEWS ══ -->
+  <section class="section">
     <div class="section-inner">
+      <span class="section-eyebrow">Latest</span>
       <h2 class="section-title">News &amp; Updates</h2>
       <div class="news-grid">
         <div class="news-item">
           <span class="news-date">May 2026</span>
-          <p>Delivered a virtual invited talk at Universitas Terbuka, Indonesia — "A Mechanistic Stage-Structured Model for Estimating Maturation, Mortality, and Recruitment Parameters of Three Economically Significant Fish Species in Canadian Waters."</p>
+          <p>Invited virtual talk at Universitas Terbuka, Indonesia — "A Mechanistic Stage-Structured Model for Estimating Maturation, Mortality, and Recruitment Parameters."</p>
         </div>
         <div class="news-item">
           <span class="news-date">2025–2026</span>
@@ -506,7 +606,7 @@
         </div>
         <div class="news-item">
           <span class="news-date">2024</span>
-          <p>Received York University Academic Excellence Fund for Publication and Other Scholarly Activities (2023 &amp; 2024).</p>
+          <p>York University Academic Excellence Fund for Publication and Other Scholarly Activities (2023 &amp; 2024).</p>
         </div>
       </div>
     </div>
