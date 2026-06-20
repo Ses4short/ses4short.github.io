@@ -175,9 +175,13 @@
 
     /* ── ABOUT SECTION ── */
     .about-strip {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .about-strip { grid-template-columns: 1fr; }
     }
     .about-text p { margin-bottom: 0.9rem; line-height: 1.78; }
     .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
@@ -454,10 +458,10 @@
             The lab operates through a structured five-stage pipeline: data integration → mechanistic modelling → statistical inference and machine learning → decision analysis and optimisation → translation into forecasting tools and policy-relevant outputs.
           </p>
         </div>
-        <div class="about-stats" style="width:100%;">
+        <div class="about-stats">
           <!-- Animated research network -->
-          <canvas id="researchNet" width="700" height="500"
-            style="border-radius:12px; background:#f4f6fb; display:block; width:100%; max-width:700px; margin:0 auto;"></canvas>
+          <canvas id="researchNet" width="480" height="480"
+            style="border-radius:12px; background:#f4f6fb; display:block; width:100%;"></canvas>
           <p style="font-size:0.7rem;text-align:center;color:#999;margin-top:0.5rem;font-family:Inter,sans-serif;letter-spacing:0.06em;text-transform:uppercase;">Research connections</p>
           <script>
           (function(){
@@ -466,17 +470,17 @@
             const W = canvas.width, H = canvas.height;
             const CX = W/2, CY = H/2;
             const nodes = [
-              { label:'MAIDES',  x:CX,     y:CY,     r:46, color:'#3b0d6b', pulse:0   },
-              { label:'Mathematics', x:CX,  y:72,    r:34, color:'#1e4d8c', pulse:0.4 },
-              { label:'AI',      x:CX+200, y:CY-80,  r:34, color:'#b83030', pulse:0.8 },
-              { label:'Disease', x:CX+185, y:CY+110, r:34, color:'#993c1d', pulse:1.2 },
-              { label:'Ecology', x:CX-200, y:CY+100, r:34, color:'#2e7d32', pulse:1.6 },
-              { label:'Systems', x:CX-190, y:CY-85,  r:34, color:'#1a6b5a', pulse:2.0 },
+              { label:'MAIDES',      x:CX,     y:CY,     r:44, color:'#3b0d6b', pulse:0   },
+              { label:'Mathematics', x:CX,     y:55,     r:42, color:'#1e4d8c', pulse:0.4 },
+              { label:'AI',          x:CX+152, y:CY-88,  r:36, color:'#b83030', pulse:0.8 },
+              { label:'Disease',     x:CX+145, y:CY+98,  r:36, color:'#993c1d', pulse:1.2 },
+              { label:'Ecology',     x:CX-152, y:CY+90,  r:36, color:'#2e7d32', pulse:1.6 },
+              { label:'Systems',     x:CX-148, y:CY-84,  r:36, color:'#1a6b5a', pulse:2.0 },
             ];
             const edges=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[2,3],[3,4],[4,5],[5,1]];
             const floats=nodes.map((n,i)=>({
               ox:n.x,oy:n.y,
-              ax:(Math.random()-.5)*28,ay:(Math.random()-.5)*28,
+              ax:(Math.random()-.5)*14,ay:(Math.random()-.5)*14,
               sx:.35+Math.random()*.35,sy:.35+Math.random()*.35,
               px:Math.random()*Math.PI*2,py:Math.random()*Math.PI*2,
             }));
@@ -506,9 +510,15 @@
                 ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
                 ctx.fillStyle=n.color;ctx.fill();
                 ctx.fillStyle='#fff';
-                ctx.font=(i===0?'bold 17px':'14px')+' Inter,sans-serif';
+                ctx.font=(i===0?'bold 15px':'12.5px')+' Inter,sans-serif';
                 ctx.textAlign='center';ctx.textBaseline='middle';
-                ctx.fillText(n.label,n.x,n.y);
+                // wrap label for 'Mathematics'
+                const words = n.label.split(' ');
+                if(words.length===1){ ctx.fillText(n.label,n.x,n.y); }
+                else {
+                  ctx.fillText(words[0],n.x,n.y-8);
+                  ctx.fillText(words.slice(1).join(' '),n.x,n.y+8);
+                }
               });
               requestAnimationFrame(draw);
             }
